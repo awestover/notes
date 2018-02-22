@@ -1,0 +1,11 @@
+https://apple.stackexchange.com/questions/25352/list-all-defined-aliases-in-terminal
+type alias
+alias='alias'
+
+http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
+
+real way involves editing the file and saving it
+
+nano ~/.bashrc
+add an alias to it
+source ~./bashrc to install it
