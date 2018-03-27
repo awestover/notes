@@ -1,0 +1,21 @@
+kivy is for cross platform apps
+
+try to make a phone app
+
+install?
+https://kivy.org/docs/installation/installation-linux.html
+
+
+(Android)
+
+buildozer?
+https://kivy.org/docs/guide/packaging-android.html
+
+put it on the google play store
+
+run it from kivy launcher
+
+https://www.youtube.com/watch?v=hVuvcvZ8VSA
+
+
+

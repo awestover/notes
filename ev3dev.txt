@@ -1,0 +1,11 @@
+this software allows you to program ev3 with python!!!!
+
+ssh robot@ev3dev.local
+password is maker
+
+
+
+https://coderwall.com/p/ohk6cg/remote-access-to-ipython-notebooks-via-ssh
+https://pypi.python.org/pypi/python-ev3dev/0.2.2.post1
+
+www.ev3dev.org

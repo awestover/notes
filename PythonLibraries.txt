@@ -1,0 +1,26 @@
+PDF – pdfminer. http://stackoverflow.com/a/20905381/443457
+doc – antiword
+docx – python-docx
+odt – odt2txt
+
+tkinter
+
+pygame
+
+PIL
+
+matplotlib
+
+seaborn
+
+kivy
+
+numpy
+
+scipy
+
+math
+
+time
+
+
