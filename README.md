@@ -1,3 +1,12 @@
 # notes
-Random documentation for things that I have downloaded. 
-Mostly python and Linux stuff
+Some documentation for things that I have downloaded. 
+Includes:
+
+usefull Linux tools
+
+usefull programming libraries
+
+
+etc
+
+
