@@ -1,2 +1,5 @@
 ps
 kill -KILL ps number
+
+
+killall -KILL [process name]
