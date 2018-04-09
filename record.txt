@@ -1,0 +1,15 @@
+sudo apt-get install byzanz
+
+https://www.tecmint.com/best-linux-screen-recorders-for-desktop-screen-recording/
+
+
+man byzanz
+
+https://www.tecmint.com/best-linux-screen-recorders-for-desktop-screen-recording/
+
+
+
+byzanz-record --help
+
+byzanz-record -d -d 100 f
+
