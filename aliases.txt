@@ -9,3 +9,28 @@ real way involves editing the file and saving it
 nano ~/.bashrc
 add an alias to it
 source ~./bashrc to install it
+
+
+
+examples:
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Alek's aliases
+alias lh='python3 -m http.server'
+
+alias gitc='git add . && git commit -m'
+alias gitp='git push origin master'
+alias gitu='git pull origin master'
+alias gitr='git remote add origin '
+
+alias killpy='python3 ~/Desktop/documentation/psKILL.py'
+
+alias android_studio='/usr/local/android-studio/bin/studio.sh'
+alias andstud='/usr/local/android-studio/bin/studio.sh'
+
+alias pipg='pip list --format=columns | grep '
+

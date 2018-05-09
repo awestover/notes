@@ -1,0 +1,11 @@
+http://math.rice.edu/~dfield/dfpp.html
+
+also can do them in python
+
+matplotlib
+has a thing called
+quiver for vectors
+
+takes in 4 args...
+
+
