@@ -17,9 +17,10 @@ def imgTransparent(imgPath):
 
 	img.putdata(newData)
 
-	img.save("batch\{}".format(imgPath), "PNG")
+	img.save(os.path.join("batch",imgPath), "PNG")
 
 # for i in range(1, 7):
 # 	imgTransparent("die{}.png".format(i))
-os.mkdir("batch")
+if not os.path.exists("batch"):
+	os.mkdir("batch")
 imgTransparent("cow.png")
