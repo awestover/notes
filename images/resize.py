@@ -5,15 +5,20 @@ import os
 
 # https://stackoverflow.com/questions/273946/how-do-i-resize-an-image-using-pil-and-maintain-its-aspect-ratio
 
-newSize = (66, 50)
-def imgResize(imgPath):
+def imgResize(imgPath, newSize, save=True):
 	img = Image.open(imgPath)
 	img = img.resize(newSize, Image.ANTIALIAS)
-	img.save(os.path.join("batch", imgPath))
+	if save:
+		img.save(os.path.join("batch", imgPath))
+	else:
+		return img
 
-# for i in range(1, 7):
-# 	imgResize("die{}.png".format(i))
-if not os.path.exists("batch"):
-	os.mkdir("batch")
-imgResize("test.png")
+if __name__ == "__main__":
+	print("resizing")
+	# for i in range(1, 7):
+	# 	imgResize("die{}.png".format(i))
+	if not os.path.exists("batch"):
+		os.mkdir("batch")
+	imgResize("test.png", (66, 50))
 
+	
