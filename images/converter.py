@@ -3,7 +3,6 @@ from PIL import Image
 import os
 
 def imgTransparent(imgPath):
-
 	img = Image.open(imgPath)
 	img = img.convert("RGBA")
 	datas = img.getdata()

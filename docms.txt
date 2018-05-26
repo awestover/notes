@@ -1,0 +1,10 @@
+get a .docm file
+
+unzip it
+
+(or unzip them all, might need to be smart about where you put them...)
+
+look in word/documents.xml or something
+
+<w:t>
+tags contain info
