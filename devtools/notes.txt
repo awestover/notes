@@ -1,0 +1,7 @@
+
+devtools are super annoying
+it is way too easy to hack a game
+
+it is somewhat possible to detect when they are activated 
+
+npm it

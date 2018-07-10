@@ -1,0 +1,7 @@
+ngrok kinda works
+
+but localtunnel is super cool
+
+npm install -g localtunnel
+lt --subdomain X --port 3000
+
