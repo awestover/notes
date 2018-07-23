@@ -1,6 +1,0 @@
-heroku ps
-
-list hours left
-
-heroku is nice for hosting stuff
-

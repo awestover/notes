@@ -1,4 +1,0 @@
-sudo apt install feh, then feh file.png for image display
-https://superuser.com/questions/276596/play-mp3-or-wav-file-via-linux-command-line
-sudo apt install sox
-play file.wav for sound
