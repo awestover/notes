@@ -19,6 +19,50 @@ recursively zip a directory
 zip -r foo.zip dir_path
 ```
 
+## aliases
+
+https://apple.stackexchange.com/questions/25352/list-all-defined-aliases-in-terminal
+type alias
+alias='alias'
+http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
+real way involves editing the file and saving it
+`nano ~/.bashrc` add an alias to it `source ~./bashrc` to install it
+
+####examples:
+```
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Alek's aliases
+alias lh='python3 -m http.server'
+
+alias gitc='git add . && git commit -m'
+alias gitp='git push origin master'
+alias gitu='git pull origin master'
+alias gitr='git remote add origin '
+
+alias killpy='python3 ~/Desktop/documentation/psKILL.py'
+alias android_studio='/usr/local/android-studio/bin/studio.sh'
+alias andstud='/usr/local/android-studio/bin/studio.sh'
+alias pipg='pip list --format=columns | grep '
+```
+
+## file sharing
+teletype on atom is good
+
+floobits is cross editor
+* go to floobits website 
+* infinite free tiral for public repos
+* sign up with github account 
+* download tool (atom: `apm install floobits`)
+* conrol+shift+p
+* create or join workspace 
+* get a nice directory for it
+
+
+
 ## kill stuff
 ```
 ps
@@ -79,6 +123,32 @@ click multiple desktops
 switch between with control+alt+arrows
 
 
+## port forwarding / tunelling
+
+ngrok is ok
+
+localhost.run is really nice (no download beyond openssh-server)
+ ssh -R 80:localhost:3000 ssh.localhost.run
+
+localtunnel (from npm)
+is ok
+lt -s nameofthing -p 3000 
+
+none of these require router config stuff
+
+all should be cross platform
+
+ngrok kinda works
+
+but localtunnel is super cool
+
+npm install -g localtunnel
+lt --subdomain X --port 3000
+
+
+
+
+
 
 
 # python stuff
@@ -98,6 +168,36 @@ fig, axs = plt.subplots(nrows=3, ncols=2)
 # for multiple plots
 
 ```
+
+##.docm files
+* get a .docm file
+* unzip it (or unzip them all, might need to be smart about where you put them...)
+* look in word/documents.xml
+* use python beautiful soup to parse
+```python
+soup.find_all('checkbox')
+soup.find_all("text")
+```
+* to parse the text probably strip all spaces and stuff
+* beware of weird characters
+* use utf8 encoding when possible
+
+`<w:t>` tags contain info
+
+
+##.doc files
+You will have to use two different command-line tools, depending if you are working with .doc or .docx format.
+
+For .doc use catdoc:
+
+catdoc foo.doc > foo.txt
+For .docx use docx2txt:
+
+docx2txt foo.docx
+The latter will produce a file called foo.txt in the same directory as the original.
+
+I'm not sure which Linux distribution you are using, but both catdoc and docx2txt are available from the Ubuntu repositories, for example.
+
 
 ## good libraries
 mammoth - docx to txt
@@ -123,6 +223,29 @@ scipy
 math
 time
 
+## kivy
+for making phone apps (apps also work on desktop too)
+kivy is for cross platform apps
+
+try to make a phone app
+
+install?
+https://kivy.org/docs/installation/installation-linux.html
+
+
+(Android)
+
+buildozer?
+https://kivy.org/docs/guide/packaging-android.html
+
+put it on the google play store
+
+run it from kivy launcher
+
+https://www.youtube.com/watch?v=hVuvcvZ8VSA
+
+
+
 
 ## django 
 is better than flask
@@ -143,6 +266,18 @@ this stuff will get you into the virtual env
 sudo pip install pipenv
 pipenv install
 pipennv shell
+
+## ev3dev
+this software allows you to program ev3 with python!!!!
+
+`ssh robot@ev3dev.local`
+password is maker
+
+https://coderwall.com/p/ohk6cg/remote-access-to-ipython-notebooks-via-ssh
+https://pypi.python.org/pypi/python-ev3dev/0.2.2.post1
+
+www.ev3dev.org
+
 
 
 
@@ -193,6 +328,20 @@ sudo apt-get install graphviz
 list hours left
 heroku is nice for hosting stuff
 
+To provision a mongo database:
+`heroku addons:create mongolab`
+
+
+## notifyjs
+js notifications
+super easy and awesome
+
+download the code from their website
+
+$.notify("Hello world");
+ is a simple example
+
+
 
 # general oddities
 
@@ -210,6 +359,37 @@ xeyes
 and creepy eyes show up
 
 
+## phase diagrams
+http://math.rice.edu/~dfield/dfpp.html
+
+also can do them in python
+
+matplotlib
+has a thing called
+quiver for vectors
+
+takes in 4 args...
 
 
 
+## surge
+cool STATIC website hosting service
+surge
+
+
+first
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+sudo apt-get install nodejs-legacy (I think)
+
+npm install --global surge
+
+surge
+
+
+## touchpad
+go to touchpad in settings
+turn it off
+
+I also have a keyboard shortcut

@@ -1,7 +1,0 @@
-js notifications
-super easy and awesome
-
-download the code from their website
-
-$.notify("Hello world");
- is a simple example
