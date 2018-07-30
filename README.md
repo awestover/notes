@@ -158,6 +158,17 @@ lt --subdomain X --port 3000
 pip list | grep -o ^a.*
 ```
 
+## version
+import struct;print (struct.calcsize("P") * 8)
+
+## binary opperations
+
+bin(8)='0b100'
+bin(16)='0b1000'
+8&16=0
+8|16=24
+8^16=24
+
 ## plotting
 ```python
 import matplotlib.pyplot as plt
