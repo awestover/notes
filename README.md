@@ -290,7 +290,10 @@ https://pypi.python.org/pypi/python-ev3dev/0.2.2.post1
 www.ev3dev.org
 
 
+# javascript stuff
 
+## timer
+```console.time("nob"); console.timeEnd("nob");```
 
 
 # programming libraries
