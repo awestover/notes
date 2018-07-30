@@ -10,7 +10,6 @@ Including
 
 
 
-
 # Linux tools
 
 ## zip on linux
@@ -81,6 +80,8 @@ git push origin master
 
 git reset - undoes an add
 ```
+
+credential store
 
 ## record stuff
 `sudo apt-get install byzanz`
