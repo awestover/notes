@@ -18,6 +18,9 @@ recursively zip a directory
 zip -r foo.zip dir_path
 ```
 
+## simplenote
+
+
 ## aliases
 
 https://apple.stackexchange.com/questions/25352/list-all-defined-aliases-in-terminal
@@ -291,13 +294,39 @@ https://pypi.python.org/pypi/python-ev3dev/0.2.2.post1
 www.ev3dev.org
 
 
+
+
+
 # javascript stuff
 
 ## timer
-```console.time("nob"); console.timeEnd("nob");```
+```
+console.time("nob"); console.timeEnd("nob");
+```
+
+# graphics
+p5 js is pretty good
 
 
-# programming libraries
+
+
+# R
+
+## downlaod
+```
+sudo apt-get update
+sudo apt-get install r-base
+```
+
+
+# Latex
+Compilation tools(?):
+`sudo apt-get install texlive-full`  
+Editor:
+`sudo apt-get install texmaker`  
+`texmaker` to launch editor
+
+# java
 
 ## processing
 is a nice java library
@@ -313,7 +342,7 @@ processing
 (or on windows etc get the app)
 
 
-## android studio
+# android studio
 annoying install from website, but it is for making phone apps
 warning this thing is big! (a couple of Gigabytes)
 
@@ -332,7 +361,7 @@ the file is
 
 also note the sdk is installed at ~ I think
 
-## dots (graph visualization)
+# dots (graph visualization)
 sudo apt-get install graphviz
 
 
