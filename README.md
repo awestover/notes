@@ -12,6 +12,13 @@ Including
 
 # Linux tools
 
+## zoom
+get it as a chrome extension and it downloads the thing I think
+for viewing someones screen (video conference)
+
+## team-viewer
+you can actually manipulate someone elses screen
+
 ## zip on linux
 recursively zip a directory
 ```
