@@ -133,7 +133,6 @@ go to appearence
 click multiple desktops
 switch between with control+alt+arrows
 
-
 ## port forwarding / tunelling
 
 ngrok is ok
@@ -334,6 +333,9 @@ Editor:
 `texmaker` to launch editor
 
 # java
+
+## jars
+java -jar jarfilename. jar
 
 ## processing
 is a nice java library
