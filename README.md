@@ -313,7 +313,9 @@ console.time("nob"); console.timeEnd("nob");
 # graphics
 p5 js is pretty good
 
-
+# speak.js
+text to speech 
+pretty cool
 
 
 # R
