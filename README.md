@@ -12,6 +12,12 @@ Including
 
 # Linux tools
 
+## bash background process
+```
+python test.py &
+```
+note: it can still print stuff to stdout
+
 ## zoom
 get it as a chrome extension and it downloads the thing I think
 for viewing someones screen (video conference)
