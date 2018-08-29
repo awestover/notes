@@ -8,7 +8,9 @@ this file contains instructions for what to install / do when you get a new comp
 * C (gcc)
 * C++ (gpp)
 * R
+* octave
 * Tex
+* java
 
 ## IDEs
 * atom
