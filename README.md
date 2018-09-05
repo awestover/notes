@@ -225,6 +225,9 @@ The latter will produce a file called foo.txt in the same directory as the origi
 
 I'm not sure which Linux distribution you are using, but both catdoc and docx2txt are available from the Ubuntu repositories, for example.
 
+## pdf
+PyPDF2
+
 
 ## good libraries
 mammoth - docx to txt

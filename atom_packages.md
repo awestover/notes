@@ -1,0 +1,3 @@
+# atom packages
+* minimap
+* pigments
