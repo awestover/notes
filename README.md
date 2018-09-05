@@ -327,6 +327,13 @@ text to speech
 pretty cool
 
 
+# webpack
+import statements
+organize code better
+
+# minify
+obsfucate code so console hacking is harder
+
 # R
 
 ## downlaod
