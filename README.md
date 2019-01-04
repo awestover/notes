@@ -8,7 +8,8 @@ Including
  * programming services
  * misc
 
-
+# Mac tools
+ * double commander: replacement for finder tool, tab to switch between 2 panes, ctrl t for terminal (so nice!) 
 
 # Linux tools
 
