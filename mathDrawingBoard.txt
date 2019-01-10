@@ -1,0 +1,19 @@
+
+Mac
+
+called Mischief (get free version)
+it is an infinite black board
+perfect for doing math with
+
+some usefull shortcuts
+
+command w: screen transparent
+<, >: more or less transparent if already did command w
+e: eraser
+b: brush
+c: bigger brush
+x: smaller brush
+p: color picker
+h: can slide arround
+
+
