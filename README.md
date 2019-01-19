@@ -8,6 +8,12 @@ Including
  * programming services
  * misc
 
+# atom
+* highly configurable text editor
+* ctrl shift p to access options
+* snippets are cool
+* you can add your own with ctrl shift p then type add snippets 
+
 # Mac tools
  * double commander: replacement for finder tool, tab to switch between 2 panes, ctrl t for terminal (so nice!) 
 
