@@ -173,8 +173,21 @@ lt --subdomain X --port 3000
 
 
 
+# vim:
+  * this is an editor
+  * good or bad? hard to say
+
+# zsh
+  * this is kind of a cool terminal
+
+# remapping caps to escape
+  * pretty good for vim
 
 # python stuff
+
+## pypy
+  * cool thing
+  * you can massively speed up python programs with this
 
 ## pip
 ```
