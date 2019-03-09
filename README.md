@@ -484,3 +484,7 @@ go to touchpad in settings
 turn it off
 
 I also have a keyboard shortcut
+
+
+# o my zsh
+* warp dirrectory is cool "wd help"
