@@ -9,3 +9,6 @@ so is o my zsh (this is an extension of the terminal not a new terminal)
 
 nice things:
 ctrl shift d and crtrl d can make tabs in the terminal!
+
+
+https://blog.andrewray.me/how-to-create-custom-iterm2-window-arrangments/

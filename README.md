@@ -19,6 +19,9 @@ Including
 
 # Linux tools
 
+## kevin says 
+# xournalpp is a nice tool for editting pdfs
+
 ## bash background process
 ```
 python test.py &
