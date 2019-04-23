@@ -25,3 +25,6 @@ d
 u 
 
 
+
+also, just a general mac note
+comand L puts you in the search bar

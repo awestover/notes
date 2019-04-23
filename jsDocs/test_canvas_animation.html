@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Test_canvas</title>
+	</head>
+	<body>
+		<div id="myAnimation" style="position: absolute"><h1>my animation</"h1></div>
+		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"> </canvas>		
+		<!-- <script src="test_canvas.js" charset="utf-8"></script> -->
+
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			ctx.moveTo(0, 0);
+			ctx.lineTo(200, 100);
+			ctx.stroke();
+
+			var elem = document.getElementById("myAnimation");   
+
+			let quit = false;
+			let id = setInterval(frame, 30);
+			let pos = 0;
+			function frame() {
+				if(quit) {
+					clearInterval(id);
+				}
+				else {
+					console.log("not yet");
+						pos+=1; 
+						elem.style.top = pos + 'px'; 
+						elem.style.left = pos + 'px'; 
+				}
+			}
+		</script>
+	</body>
+</html>

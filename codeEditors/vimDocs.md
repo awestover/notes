@@ -1,5 +1,9 @@
 
 # vim documentation
+must do: remap caps lock to escape 
+
+# nice theme:
+https://github.com/NLKNguyen/papercolor-theme
 
 ## notes:
   * this is some information about really useful vim shortcuts, yes it is all online, but I think that writing it down might help me remember it better, and access obscure ones easier
