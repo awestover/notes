@@ -13,4 +13,4 @@ source ~/.bash_profile
 
 iterm is OK
 
-
+grapher is a cool app
