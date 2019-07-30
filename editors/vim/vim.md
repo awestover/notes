@@ -14,4 +14,5 @@ https://github.com/NLKNguyen/papercolor-theme
   * sp
   * control W and then the hjkl key that indicates the correct direction
 
-
+## help
+K for help
