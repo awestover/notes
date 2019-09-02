@@ -23,3 +23,8 @@ Ctrl a and Ctrl e for beginning and end
 Ctrl k to cut after cursor
 
 iterm: control command arrow to change pane size
+
+# cpdf
+A nice CLI tool to concatenate pdfs and stuff
+cpdf a.pdf b.pdf -o ab.pdf
+
