@@ -16,3 +16,8 @@ https://github.com/NLKNguyen/papercolor-theme
 
 ## help
 K for help
+
+
+## more intense information
+
+gq wraps text in vim
