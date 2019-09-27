@@ -1,5 +1,8 @@
 # Linux tools
 
+# tmux!!
+# vim!!
+
 ## kevin says 
 # xournalpp is a nice tool for editting pdfs
 
