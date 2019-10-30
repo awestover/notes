@@ -5,8 +5,10 @@ This contains some documentation for lots of tools that I use, and code examples
   -  assembly docs
   -  cpp docs
   -  editors
+  -  goDocs
   -  javaDocs
   -  jsDocs
+  -  juliaDocs
   -  latexDocs
   -  luaDocs
   -  miscCodeDocs
