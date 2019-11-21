@@ -64,8 +64,47 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{theorem}{Theorem}
 
-\usepackage{mdframed}
-\newmdtheoremenv{q}{Question}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{framed}
+\theoremstyle{plain}% default
+
+
+\newtheorem{prototheorem}{Theorem}[section]
+\newenvironment{thm}
+   {\colorlet{shadecolor}{blue!20}\begin{shaded}\begin{prototheorem}}
+   {\end{prototheorem}\end{shaded}}
+
+\newtheorem{protodefinition}[prototheorem]{Definition}
+\newenvironment{defn}
+   {\colorlet{shadecolor}{black!=5}\begin{shaded}\begin{protodefinition}}
+   {\end{protodefinition}\end{shaded}}
+
+\newtheorem{protolemma}[prototheorem]{Lemma}
+\newenvironment{lem}
+   {\colorlet{shadecolor}{green!15}\begin{shaded}\begin{protolemma}}
+   {\end{protolemma}\end{shaded}}
+
+\newtheorem{protocorollary}[prototheorem]{Corollary}
+\newenvironment{cor}
+   {\colorlet{shadecolor}{green!15}\begin{shaded}\begin{protocorollary}}
+   {\end{protocorollary}\end{shaded}}
+
+\newtheorem{protoproposition}[prototheorem]{Proposition}
+\newenvironment{prop}
+   {\colorlet{shadecolor}{green!15}\begin{shaded}\begin{protoproposition}}
+   {\end{protoproposition}\end{shaded}}
+
+ \newtheorem{protoexample}[prototheorem]{Example}
+\newenvironment{ex}
+   {\colorlet{shadecolor}{red!15}\begin{shaded}\begin{protoexample}}
+   {\end{protoexample}\end{shaded}}
+
+\newtheorem{protoremark}[prototheorem]{Remark}
+\newenvironment{rmk}
+   {\colorlet{shadecolor}{red!15}\begin{shaded}\begin{protoremark}}
+   {\end{protoremark}\end{shaded}}
+
 
 \author{Alek Westover}
 \title{Notes}
@@ -83,6 +122,10 @@ A short summary of the notes.
 	
 \end{proof}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+
+\begin{rmk}
+  asdlfasdf
+\end{rmk}
 
 \end{document}
 
