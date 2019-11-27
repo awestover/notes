@@ -1,0 +1,13 @@
+METHOD
+
+index.html posts a form
+
+redirect to x.html?data
+
+read url with
+
+document.URL
+
+and parse url for data
+
+

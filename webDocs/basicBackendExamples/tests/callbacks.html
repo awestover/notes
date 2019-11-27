@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>callbacks</title>
+</head>
+
+<body>
+
+<script>
+console.log("callme");
+
+function b(x)
+{
+  console.log(x[0]+x[1]+1);
+}
+
+function a(f, p)
+{
+
+  console.log("a");
+  f(p);
+}
+
+a(b, [1,2]);
+
+
+
+</script>
+
+</body>
+</html>

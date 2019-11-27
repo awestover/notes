@@ -1,0 +1,18 @@
+http://flask.pocoo.org/docs/1.0/tutorial/
+
+this is a great tutorial
+
+
+first make files
+
+project_name/
+tests/
+.gitignore
+(put lots of stuff in this)
+
+then in project_name/
+make __init__.py
+and db.py
+
+then make the db init script
+schema.sql
