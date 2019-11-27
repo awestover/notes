@@ -1,0 +1,29 @@
+Theland
+Rand never exactly conformed to the typical image of a sheep.
+He certainly didn’t look the part. Most sheep level up to interesting colors very fast, but Rand has stayed plain white and black for many feeding cycles. He has very low health and is old and decrepit and thus very slow.
+Rand wants more than anything in theland to taste a Hawaiian pizza before his death
+This Hawaiian pizza would greatly increase his happiness, and rejuvenate him
+
+He knew that it would not be easy
+
+It is a long and dangerous journey to reach the pizza
+If he was ever to make it he must travel through lands potentially inhabited by dinos and even other tribes of animals
+
+Rand decided to set out
+
+He passed a newly spawned dragon on his way  
+It was about to enter into the sight radius of a dino 
+once the dino detected the dragon it would have no chance of living
+the oblivious dragon continued on its journey towards its doom
+for Rand this was a great opportunity
+in luring the dino towards the dragon, Rand would have a whole new area of the land to explore for hawaiian pizza
+the dragons were not nice
+once they gain a little age they often viciously attacked the sheep to which Rand was family
+Rationally Rand knew that this was the perfect opportunity
+yet somehow taking it felt wrong 
+every time he tried to he was tugged back by a repulsive force as if he was attracted to some point controlled by a being in a world that he could never comprehend
+
+A note on the vision of creatures in theland:
+These creatures do not “see” as humans do, but rather they know when things are close to them. They will always detect collisions with other animals and some animals can even sense when they are within some proximity range of another animal. Animals may also be attracted to a user defined point or constrained to a certain area of movement. To call this sense “sight” is highly arbitrary, but it helps make the animals more relatable. In other literature, such as Flatland, 2 dimensional sight is investigated. The proximity sensing of animals in theland is not based on visual differences as in other worlds, and is perhaps in most cases more akin to touch or smell than sight, yet that is the label I will most commonly use. This is a product of the animals of theland living in a world very different from our own. It is conceivable that explaining an alien sense to humans could be very challenging and that is similar to what I do here. Not very similar though, because the “sense” of these animals is actually governed by a very simple algorithm. I digress. A lot. Anyways…
+
+
