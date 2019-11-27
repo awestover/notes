@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<button type="button" name="button" class="btn lg-btn" style="height: 500px; width: 500px" onclick="buzz()">buzz</button>
+<br><br><br><br>
+
+<div class="card" style="padding: 5%">
+	<label>name:</label>
+	<input oninput="updateUName()" type="text" name="name" id="uNameInput">
+	<p id="uName"></p>
+</div>
+
+<script type="text/javascript">
+let name = "";
+var audio = new Audio("{{ url_for('static', filename='beep.mp3') }}");
+function buzz() {
+	if(name.length > 0) {
+		audio.play();
+		$.notify("buzzed in", "success");
+		$.post("/buzz", {"name": name}, function(rdata){
+			let data = JSON.parse(rdata);
+			console.log("buzz received");
+			console.log(data);
+			if (data == true)
+				screenLightGreen();
+			else
+				screenRed();
+			setTimeout(screenBlue, 5000);		
+		});
+	}
+	else {
+		screenBlack();
+		$.notify("hey, input your name please", "error");
+		setTimeout(screenBlue, 1000);
+	}
+}
+
+function screenRed() {
+	$("body").css("background-color", "red");
+}
+
+function screenLightGreen() {
+	$("body").css("background-color", "lightgreen");
+}
+
+function screenBlack() {
+	$("body").css("background-color", "black");
+}
+
+function screenBlue() {
+	$("body").css("background-color", "lightblue");
+}
+
+screenBlue();
+
+function updateUName() {
+	name = $("#uNameInput").val();
+	$("#uName").text(name);
+}
+
+</script>
+{% endblock %}

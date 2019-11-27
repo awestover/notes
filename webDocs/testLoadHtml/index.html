@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>blah</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <style type="text/css" media="screen">
+      .active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="place_holder">
+    </div>
+    <script charset="utf-8">
+     $(document).ready(function() {
+          $('#place_holder').load("other.html", function(){
+            $("#blug").addClass("active");
+          });
+        });
+    </script>
+  </body>
+</html>
