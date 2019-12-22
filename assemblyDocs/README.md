@@ -3,3 +3,9 @@ http://www.tutorialspoint.com/assembly_programming/assembly_quick_guide.htm
 
 WARNING: definitely develop stuff on Linux VM
 
+
+# links
+
+- [run.sh](run.sh)
+- [README.md](README.md)
+- [hello.asm](hello.asm)
