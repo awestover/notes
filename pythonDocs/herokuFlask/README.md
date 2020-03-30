@@ -8,10 +8,11 @@ you can create a virtualenv from requirements.txt
 
 then do 
 
+```sh
 git init
 git add .
 git commit
 heroku login
 heroku create X
 git push heroku master
-
+```
