@@ -16,3 +16,7 @@ heroku login
 heroku create X
 git push heroku master
 ```
+
+[heroku python](https://devcenter.heroku.com/articles/getting-started-with-python)
+
+
