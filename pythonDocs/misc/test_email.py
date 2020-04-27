@@ -7,17 +7,21 @@ app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME="username@gmail.com",
-    MAIL_PASSWORD="EMAIL PASSWORD DONT FREAKING PUT A PASSWORD HERE AND THEN PUSH TO GITHUB THAT WOULD BE SO DUMB"
+    MAIL_USERNAME="EMAIL",
+    MAIL_PASSWORD="PASSWORD"
 )
 mail = Mail(app)
+
+@app.route("/")
+def index():
+    return "<h1>wowwww</h1>"
 
 @app.route('/send-mail/')
 def send_mail():
     try:
         msg = Message("Send Mail Tutorial!",
-        sender="username@gmail.com",
-        recipients=["otherusername@gmail.com"])
+        sender=app.config.get("MAIL_USERNAME"),
+        recipients=["alek.westover@gmail.com"])
         msg.body = "This is a second test email. I hope it finds you well."
         mail.send(msg)
         return 'Mail sent!'
@@ -25,5 +29,5 @@ def send_mail():
         return(str(e)) 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port="80")
 
