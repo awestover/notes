@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\usepackage{xspace}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -16,29 +17,14 @@
 
 \usepackage{hyperref}
 
+\newcommand{\defn}[1]{{\textit{\textbf{\boldmath #1}}}\xspace}
+\renewcommand{\paragraph}[1]{\vspace{0.09in}\noindent{\bf \boldmath #1.}} 
+
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
 \DeclareMathOperator{\img}{Img}
 \DeclareMathOperator{\polylog}{\text{polylog}}
 \DeclareMathOperator{\st}{\text{ such that }}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\interior}[1]{%
-  {\kern0pt#1}^{\mathrm{o}}%
-}
-\newcommand{\mb}{\mathbf}
-\newcommand{\x}{\mathbf{x}}
-\newcommand{\y}{\mathbf{y}}
-\newcommand{\z}{\mathbf{z}}
-\renewcommand{\d}{\mathrm{d}} %straight d for integrals
-\newcommand{\De}{\Delta}
-\renewcommand{\Re}{\mathrm{Re}}
-\renewcommand{\Im}{\mathrm{Im}}
-\newcommand{\setof}[2]{\left\{ #1\; : \;#2 \right\}}
-\newcommand{\set}[1]{\left\{ #1\right\}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\contr}[0]{\[ \Rightarrow\!\Leftarrow \]}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
 

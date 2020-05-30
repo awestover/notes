@@ -13,6 +13,9 @@
 \rhead{}
 
 \usepackage{hyperref}
+\usepackage{xspace}
+\newcommand{\defn}[1]{{\textit{\textbf{\boldmath #1}}}\xspace}
+\renewcommand{\paragraph}[1]{\vspace{0.09in}\noindent{\bf \boldmath #1.}} 
 
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
@@ -61,7 +64,7 @@
    {\end{prototheorem}\end{shaded}}
 
 \newtheorem{protodefinition}[prototheorem]{Definition}
-\newenvironment{defn}
+\newenvironment{defin}
    {\colorlet{shadecolor}{black!=5}\begin{shaded}\begin{protodefinition}}
    {\end{protodefinition}\end{shaded}}
 
