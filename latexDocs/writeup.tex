@@ -24,9 +24,16 @@
 \DeclareMathOperator{\Var}{\text{Var}}
 \DeclareMathOperator{\img}{Img}
 \DeclareMathOperator{\polylog}{\text{polylog}}
-\DeclareMathOperator{\st}{\text{ such that }}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor)}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil)}
+\newcommand{\paren}[1]{\left( #1 \right)}
+
+\usepackage[capitalise,nameinlink,noabbrev]{cleveref}
+\crefname{equation}{}{} % cref{eq:blah} only does (1) instead of Equation (1)
+\crefname{enumi}{Step}{} % cref{eq:blah} only does (1) instead of Equation (1)
 
 \newtheorem{fact}{Fact}
 \newtheorem{definition}{Definition}
@@ -43,4 +50,3 @@
 \maketitle
 
 \end{document}
-

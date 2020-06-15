@@ -11,6 +11,7 @@
 
 
 
+
 # links
 
 - [misc](misc)
@@ -22,3 +23,4 @@
 - [pygame](pygame)
 - [sqliteTest](sqliteTest)
 - [readme.md](readme.md)
+- [plotting](plotting)

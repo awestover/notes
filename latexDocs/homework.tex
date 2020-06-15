@@ -19,29 +19,37 @@
 
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
+
 \DeclareMathOperator{\img}{Img}
 \DeclareMathOperator{\polylog}{\text{polylog}}
 \DeclareMathOperator{\st}{\text{ such that }}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\interior}[1]{%
-  {\kern0pt#1}^{\mathrm{o}}%
-}
+\newcommand{\interior}[1]{ {\kern0pt#1}^{\mathrm{o}} }
 \newcommand{\mb}{\mathbf}
 \newcommand{\x}{\mathbf{x}}
 \newcommand{\y}{\mathbf{y}}
 \newcommand{\z}{\mathbf{z}}
 \renewcommand{\d}{\mathrm{d}} %straight d for integrals
-\newcommand{\De}{\Delta}
 \renewcommand{\Re}{\mathrm{Re}}
 \renewcommand{\Im}{\mathrm{Im}}
+
 \newcommand{\setof}[2]{\left\{ #1\; : \;#2 \right\}}
 \newcommand{\set}[1]{\left\{ #1\right\}}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\contr}[0]{\[ \Rightarrow\!\Leftarrow \]}
+\newcommand{\contr}{\[ \Rightarrow\!\Leftarrow \]}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor)}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil)}
+\newcommand{\paren}[1]{\left( #1 \right)}
+
+\usepackage[capitalise,nameinlink,noabbrev]{cleveref}
+\crefname{equation}{}{} % cref{eq:blah} only does (1) instead of Equation (1)
+\crefname{enumi}{Step}{} % cref{eq:blah} only does (1) instead of Item(1)
 
 \newtheorem{fact}{Fact}
 \newtheorem{definition}{Definition}
@@ -68,4 +76,3 @@
 \thispagestyle{empty}
 
 \end{document}
-

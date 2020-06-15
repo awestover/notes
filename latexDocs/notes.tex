@@ -7,6 +7,8 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 
+\usepackage[breakable]{tcolorbox}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Alek Westover}
@@ -23,25 +25,33 @@
 \DeclareMathOperator{\polylog}{\text{polylog}}
 \DeclareMathOperator{\st}{\text{ such that }}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\interior}[1]{%
-  {\kern0pt#1}^{\mathrm{o}}%
-}
+\newcommand{\interior}[1]{ {\kern0pt#1}^{\mathrm{o}} }
 \newcommand{\mb}{\mathbf}
 \newcommand{\x}{\mathbf{x}}
 \newcommand{\y}{\mathbf{y}}
 \newcommand{\z}{\mathbf{z}}
 \renewcommand{\d}{\mathrm{d}} %straight d for integrals
-\newcommand{\De}{\Delta}
 \renewcommand{\Re}{\mathrm{Re}}
 \renewcommand{\Im}{\mathrm{Im}}
+
 \newcommand{\setof}[2]{\left\{ #1\; : \;#2 \right\}}
 \newcommand{\set}[1]{\left\{ #1\right\}}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\contr}[0]{\[ \Rightarrow\!\Leftarrow \]}
+
+\newcommand{\contr}{\[ \Rightarrow\!\Leftarrow \]}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor)}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil)}
+\newcommand{\paren}[1]{\left( #1 \right)}
+
+\usepackage[capitalise,nameinlink,noabbrev]{cleveref}
+\crefname{equation}{}{} % cref{eq:blah} only does (1) instead of Equation (1)
+\crefname{enumi}{Step}{} % cref{eq:blah} only does (1) instead of Equation (1)
 
 \newtheorem{fact}{Fact}
 \newtheorem{definition}{Definition}
@@ -51,48 +61,45 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{theorem}{Theorem}
 
-
 \usepackage{xcolor}
 \usepackage{amsthm}
 \usepackage{framed}
 \theoremstyle{plain}% default
 
-
 \newtheorem{prototheorem}{Theorem}[section]
 \newenvironment{thm}
-   {\colorlet{shadecolor}{blue!20}\begin{shaded}\begin{prototheorem}}
-   {\end{prototheorem}\end{shaded}}
+{\begin{tcolorbox}[colback=blue!10!white,colframe=blue!50!black]\begin{prototheorem}}
+{\end{prototheorem}\end{tcolorbox}}
 
 \newtheorem{protodefinition}[prototheorem]{Definition}
 \newenvironment{defin}
-   {\colorlet{shadecolor}{black!=5}\begin{shaded}\begin{protodefinition}}
-   {\end{protodefinition}\end{shaded}}
+{\begin{tcolorbox}[colback=black!5!white,colframe=black!35!black]\begin{protodefinition}}
+{\end{protodefinition}\end{tcolorbox}}
 
 \newtheorem{protolemma}[prototheorem]{Lemma}
 \newenvironment{lem}
-   {\colorlet{shadecolor}{green!15}\begin{shaded}\begin{protolemma}}
-   {\end{protolemma}\end{shaded}}
+{\begin{tcolorbox}[colback=green!15!white,colframe=green!35!black]\begin{protolemma}}
+{\end{protolemma}\end{tcolorbox}}
 
 \newtheorem{protocorollary}[prototheorem]{Corollary}
 \newenvironment{cor}
-   {\colorlet{shadecolor}{green!15}\begin{shaded}\begin{protocorollary}}
-   {\end{protocorollary}\end{shaded}}
+{\begin{tcolorbox}[colback=green!15!white,colframe=green!35!black]\begin{protocorollary}}
+{\end{protocorollary}\end{tcolorbox}}
 
 \newtheorem{protoproposition}[prototheorem]{Proposition}
 \newenvironment{prop}
-   {\colorlet{shadecolor}{green!15}\begin{shaded}\begin{protoproposition}}
-   {\end{protoproposition}\end{shaded}}
+{\begin{tcolorbox}[colback=green!15!white,colframe=green!35!black]\begin{protoproposition}}
+{\end{protoproposition}\end{tcolorbox}}
 
  \newtheorem{protoexample}[prototheorem]{Example}
 \newenvironment{ex}
-   {\colorlet{shadecolor}{red!15}\begin{shaded}\begin{protoexample}}
-   {\end{protoexample}\end{shaded}}
+{\begin{tcolorbox}[colback=red!15!white,colframe=red!35!black]\begin{protoexample}}
+{\end{protoexample}\end{tcolorbox}}
 
 \newtheorem{protoremark}[prototheorem]{Remark}
 \newenvironment{rmk}
-   {\colorlet{shadecolor}{red!15}\begin{shaded}\begin{protoremark}}
-   {\end{protoremark}\end{shaded}}
-
+{\begin{tcolorbox}[colback=green!15!white,colframe=green!35!black]\begin{protoremark}}
+{\end{protoremark}\end{tcolorbox}}
 
 \author{Alek Westover}
 \title{Notes}
@@ -126,5 +133,25 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
   asdlfasdf
 \end{rmk}
 
-\end{document}
+\begin{cor}
+  asdfasdf
+\end{cor}
 
+\begin{thm}
+  asdfasdf
+
+  $$x^2 + \int_{0}^\infty e^{-x^2} \d x$$
+\end{thm}
+
+\begin{defin}
+  sdfasdf
+\end{defin}
+
+\begin{lem}
+  asdfasdf
+\end{lem}
+\begin{ex}
+  
+\end{ex}
+
+\end{document}
