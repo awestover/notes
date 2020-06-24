@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+
+<div id="app">
+  <h1 v-for="item in items" v-if="item.isComplete || true" :key="item.message">
+    {{ item.message }}
+  </h1>
+</div>
+
+<script>
+var myObject = new Vue({
+  el: '#app',
+  data: {
+    items: [
+        { message: 'Hello Vue!', isComplete: true},
+        { message: 'Hello Vue!', isComplete: true},
+        { message: 'Hello Vue!' },
+        { message: 'Hello Vue!' },
+        { message: 'Hello Vue!' },
+        { message: "Bar"}
+      ]
+  }
+})
+</script>
+
+</body>
+</html>
+
