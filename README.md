@@ -4,6 +4,7 @@ This contains some documentation for lots of tools that I use, and code examples
 
 
 
+
 # links
 
 - [pythonDocs](pythonDocs)
@@ -19,6 +20,7 @@ This contains some documentation for lots of tools that I use, and code examples
 - [miscCodeDocs](miscCodeDocs)
 - [genLinks.py](genLinks.py)
 - [goDocs](goDocs)
+- [Rdocs](Rdocs)
 - [juliaDocs](juliaDocs)
 - [.git](.git)
 - [latexDocs](latexDocs)
