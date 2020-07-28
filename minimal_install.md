@@ -33,6 +33,7 @@
   * `sudo apt install git`
     * `git config --global user.email "you@example.com"`
     * `git config --global user.name "Your Name"`
+    * `git config credential.helper store` stores credentials
   * `sudo apt install nodejs`
   * `sudo apt install npm`
 
