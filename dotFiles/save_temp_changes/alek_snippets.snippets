@@ -1,0 +1,61 @@
+## this file exists incase when I update vim-snippets my snippets disappear
+## put this back into plugged/vim-snippets/snippets/cpp.snippets if you have any problems acessing them 
+
+# tex
+snippet base base document
+	\\documentclass{article}[11pt]
+	\\usepackage{amsthm}
+	\\usepackage{amssymb}
+	\\usepackage{amsmath}
+	\\newtheorem{theorem}{Theorem}
+	\\newtheorem{lemma}{Lemma}
+	\\newtheorem{proposition}{Proposition}
+
+	\\begin{document}
+	\\begin{center}
+	\\begin{Large}
+		Alek Westover \\\\
+		\\vspace{2mm}
+		Math E23b
+	\\end{Large}
+	\\end{center}
+
+	\\section{}
+
+	\\end{document}
+
+# cpp
+snippet libs
+	#include <stdint.h>
+	#include <stdlib.h>
+	#include <time.h>
+	#include <assert.h>
+	//#include <math.h>
+	#include <iostream>
+	using namespace std;
+snippet fo
+	for (${4:int64_t} ${2:i} = 0; $2 < ${1:n}; $2${3:++}) {
+		${5}
+	}
+snippet ff
+	for (int i = 0; i < ${1:M}; i++) {
+		for (int j = 0; j < ${2:N}; j++) {
+			${3:std::cout<<arr[i][j]<<std::endl;}
+		}
+	}
+snippet timeit
+	clock_t t0_${1:main} = clock();
+	
+	clock_t tf_$1 = clock();
+	cout << "Time taken $1: " << (tf_$1 - t0_$1) / (double) CLOCKS_PER_SEC << endl;
+snippet cilkImports
+	#include <cilk/cilk.h>
+	#include <cilk/cilk_api.h>
+
+
+
+snippet " "Quotes" A
+\\enquote\{${1:${VISUAL}}\}${0}
+endsnippet
+
+

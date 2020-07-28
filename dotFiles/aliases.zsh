@@ -1,0 +1,109 @@
+alias save='python3 /Users/alekwestover/Desktop/miscProgramming/functions/saver.py '
+alias todo='cd /Users/alekwestover/Desktop/nonGameProjects/lbdsbwjbd && python3 app.py'
+alias gosave='python3 /Users/alekwestover/Desktop/miscProgramming/functions/gosaved.py '
+alias pypy="/usr/local/bin/pypy/bin/./pypy "
+alias pypypip="/usr/local/bin/pypy/bin/./pip "
+alias gcco="gcc -std=c++11 -O3 -march=native -funroll-loops "
+alias music="cd /Users/alekwestover/Desktop/life/songs && python3 mpgPlayer.py"
+alias mus="cd /Users/alekwestover/Desktop/life/songs && mplayer -shuffle newStuff/*"
+alias relax="cd /Users/alekwestover/Desktop/life/songs && mplayer -shuffle relax/*"
+alias vi="nvim"
+alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+alias rooster='sh ~/Desktop/miscProgramming/functions/alarmClock.sh'
+alias board='python3 /Users/alekwestover/Desktop/miscProgramming/functions/mathBoardOpen.py'
+alias goo='open -na "Google Chrome" --args --new-window "https://google.com"'
+alias class='open -na "Google Chrome" --args --new-window "https://classroom.google.com/u/1/h"'
+alias mail0='open -na "Google Chrome" --args --new-window "https://mail.google.com/mail/u/0"'
+alias drive0='open -na "Google Chrome" --args --new-window "https://drive.google.com/drive/u/0/my-drive"'
+alias school='open ~/Documents/schedule.png'
+alias mouse='python3 /Users/alekwestover/Desktop/miscProgramming/functions/mouseMover.py'
+alias quotes='python3 /Users/alekwestover/Desktop/life/fantasyBooks/spawnQuotes.py'
+alias ask='python3 /Users/alekwestover/Desktop/miscProgramming/functions/googler.py '
+alias todoapp='sh /Users/alekwestover/Desktop/nonGameProjects/todoApp/runTodoApp.sh'
+alias l='ls'
+alias ltex='find *.tex'
+alias lh='echo "running python server at localhost:8000"; python3 -m http.server'
+alias gitc='git add .;  git commit -m'
+alias gitu='git pull origin master'
+alias gitp='git push origin master'
+alias gitph='git push heroku master'
+alias corona='pandoc --css ../daystyle.css -s --mathjax readme.md -o index.html'
+alias journal='pandoc --css style.css -s --mathjax -H custom_header.html readme.md -o index.html'
+alias macKeyboard='echo "Mac Keyboard:
+control : up carrot ^
+option: weird squiggle
+shift: big up arrow"'
+alias backup='sh /Users/alekwestover/Desktop/miscProgramming/functions/rsync_all.sh'
+alias musicWordless='mpg123 -Z ~/Desktop/life/songs/shortsweet/*'
+alias sl='ls'
+alias gl="git -c color.ui=auto log --graph --pretty=tformat:'%C(yellow)%h%Creset}%Cgreen(%ar)%Creset}%C(bold blue)<%an>%Creset} %s' -100|  column -s '}' -t | less"
+alias gca="git commit --ammend"
+alias cppLineCount="( find . -name '*.cpp' -print0 | xargs -0 cat ) | wc -l"
+alias hppLineCount="( find . -name '*.hpp' -print0 | xargs -0 cat ) | wc -l"
+alias cleanDS="sudo find . -name '.DS_Store' -type f -delete"
+alias skim="/Applications/Skim.app/Contents/MacOS/Skim"
+alias ctstex="latexmk -pvc -view='pdf' "
+alias nasm="/usr/local/bin/nasm"
+alias sourceTmux="tmux source-file ~/.tmux.conf"
+alias nsrr="/usr/local/lib/ruby/gems/2.6.0/gems/nsrr-5.0.0/bin/nsrr"
+alias scheduledinger="python3 /Users/alekwestover/Desktop/documentation/pythonDocs/misc/schedule.py"
+alias repeatedly="python3 /Users/alekwestover/Desktop/miscProgramming/functions/repeatedly.py "
+alias blog="sh ../formatting/buildmd.sh"
+
+# this is for sending emails with python, I care nothing about this email account
+export SECRETKEY="UVQH8UtkT95Juw41HQwFmR1DA0hFhRz5"
+export ALEK_SECRET_KEY="UVQH8UtkT95Juw41HQwFmR1DA0hFhRz5"
+export EMAILUNM="digitalbhsyearbook2020@gmail.com"
+export EMAILPWD="autoemail4fun"
+export ENCRYPTIONSECRETKEY="uULfVrGAFO7uFQjw8iJebrbpU8Ql1r6FB3awVw1ZIGM="
+
+# bash scripts
+rmd() {
+  pandoc $1 | lynx -stdin
+}
+
+mkcdir() {
+	mkdir $1
+	cd $1
+}
+
+pandapdf() {
+  fullname=$1
+  filename=${fullname%.md}
+  echo $filename
+	pandoc $filename.md -s -o $filename.pdf
+}
+
+homework() {
+	if [ -z "$1" ]
+	then 
+		echo "put a project name plz"
+	else
+		mkdir "./$1"
+		cd "./$1"
+		cp "/Users/alekwestover/Desktop/documentation/latexDocs/homework.tex" "./$1.tex"
+	fi
+}
+
+writeup() {
+	if [ -z "$1" ]
+	then 
+		echo "put a project name plz"
+	else
+		mkdir "./$1"
+		cd "./$1"
+		cp "/Users/alekwestover/Desktop/documentation/latexDocs/writeup.tex" "./$1.tex"
+	fi
+}
+
+notes() {
+	if [ -z "$1" ]
+	then 
+		echo "put a project name plz"
+	else
+		mkdir "./$1"
+		cd "./$1"
+		cp "/Users/alekwestover/Desktop/documentation/latexDocs/notes.tex" "./$1.tex"
+	fi
+}
+
