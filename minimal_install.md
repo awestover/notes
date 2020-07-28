@@ -27,7 +27,7 @@
   * `sudo apt install curl`
   * `sudo apt install zsh`
   * download oh-my-zsh `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-  * make sure zsh is set as the default terminal
+  * make sure zsh is set as the default terminal `chsh -s $(which zsh)`
   * copy over my `.zshrc` file (note: requires installing a package in ~/.oh-my-zsh/plugins)
 
 
