@@ -1,9 +1,4 @@
 
-
-
-
-
-
 # links
 
 - [usefulChromeExtensions.md](usefulChromeExtensions.md)

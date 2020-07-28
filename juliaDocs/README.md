@@ -1,9 +1,4 @@
 
-
-
-
-
-
 # links
 
 - [oop.jl](oop.jl)

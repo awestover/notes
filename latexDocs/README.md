@@ -1,9 +1,4 @@
 
-
-
-
-
-
 # links
 
 - [pandoc.md](pandoc.md)

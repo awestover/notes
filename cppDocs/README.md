@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 # links
 
 - [inheritence.cpp](inheritence.cpp)

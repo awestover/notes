@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 # links
 
 - [atom.md](atom.md)

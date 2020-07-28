@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 # links
 
 - [test_canvas_animation.html](test_canvas_animation.html)

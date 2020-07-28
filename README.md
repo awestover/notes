@@ -5,23 +5,26 @@ This contains some documentation for lots of tools that I use, and code examples
 
 
 
+
 # links
 
-- [pythonDocs](pythonDocs)
-- [cppDocs](cppDocs)
-- [luaDocs](luaDocs)
 - [jsDocs](jsDocs)
-- [editors](editors)
-- [terminalDocs](terminalDocs)
 - [javaDocs](javaDocs)
+- [terminalDocs](terminalDocs)
+- [pythonDocs](pythonDocs)
+- [minimal_install.md](minimal_install.md)
 - [README.md](README.md)
-- [webDocs](webDocs)
+- [Rdocs](Rdocs)
 - [.gitignore](.gitignore)
+- [webDocs](webDocs)
+- [assemblyDocs](assemblyDocs)
+- [juliaDocs](juliaDocs)
+- [editors](editors)
+- [cppDocs](cppDocs)
 - [miscCodeDocs](miscCodeDocs)
 - [genLinks.py](genLinks.py)
-- [goDocs](goDocs)
-- [Rdocs](Rdocs)
-- [juliaDocs](juliaDocs)
-- [.git](.git)
+- [dotFiles](dotFiles)
 - [latexDocs](latexDocs)
-- [assemblyDocs](assemblyDocs)
+- [luaDocs](luaDocs)
+- [.git](.git)
+- [goDocs](goDocs)
