@@ -17,6 +17,10 @@
   * making YouCompleteMe work is a bit difficult
     * `sudo apt install build-essential cmake vim python3-dev`
     * run `python3 install.py` in `plugged/YouCompleteMe`
+  * fzf: 
+    * `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
+    * `~/.fzf/install`
+  * ag: `sudo apt-get install silversearcher-ag`
 
 - terminal stuff
   * terminal preferences: pure black background, pure white text, hide thing that says file and stuff

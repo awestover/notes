@@ -8,7 +8,7 @@ def generate_links(path):
         data += f"- [{f}]({f})\n"
 
     try:
-        with open(os.path.join(path, "readme.md"), "r") as f:
+        with open(os.path.join(path, "README.md"), "r") as f:
             prior_content = f.read()
     except:
         prior_content = ""
@@ -18,7 +18,7 @@ def generate_links(path):
     except: # none found
         clip_idx = -1
 
-    with open(os.path.join(path, "readme.md"), "w") as f:
+    with open(os.path.join(path, "README.md"), "w") as f:
         f.write(prior_content[:clip_idx])
         f.write(data)
     print(prior_content[:clip_idx])

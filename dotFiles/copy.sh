@@ -1,5 +1,4 @@
-cp ~/.oh-my-zsh/custom/aliases.zsh .
-cp -r ~/.zshrc .
+cp -r ~/.zshrc ./dot_zshrc
 cp -r ~/.config/nvim/autoload nvim
 cp ~/.config/nvim/init.vim nvim
 cp ~/.config/nvim/plugin-config.vimrc nvim
