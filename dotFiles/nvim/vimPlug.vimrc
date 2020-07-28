@@ -16,7 +16,7 @@ call plug#begin()
 	Plug 'luochen1990/rainbow'
 	Plug 'lervag/vimtex'
 	Plug 'JuliaEditorSupport/julia-vim'
-  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'lfv89/vim-interestingwords'
   Plug 'gabrielelana/vim-markdown'
