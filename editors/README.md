@@ -1,7 +1,8 @@
 
+
 # links
 
 - [atom.md](atom.md)
 - [vim](vim)
-- [readme.md](readme.md)
+- [README.md](README.md)
 - [sublime.md](sublime.md)
