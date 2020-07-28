@@ -45,6 +45,7 @@
 - math stuff
   * LaTeX: 
     * basic install: `sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra`
+      * lots of packages: `sudo apt-get install texlive-science`
       * now you can compile with `pdflatex`
     * `latexmk` is useful too, do `sudo apt-get install latexmk`
   * pandoc: `sudo apt-get install -y pandoc`
