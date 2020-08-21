@@ -25,7 +25,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-
 # aliases
 alias save='python3 /Users/alekwestover/Desktop/miscProgramming/functions/saver.py '
 alias todo='cd /Users/alekwestover/Desktop/nonGameProjects/lbdsbwjbd && python3 app.py'
@@ -79,16 +78,22 @@ alias scheduledinger="python3 /Users/alekwestover/Desktop/documentation/pythonDo
 alias repeatedly="python3 /Users/alekwestover/Desktop/miscProgramming/functions/repeatedly.py "
 alias blog="sh ../formatting/buildmd.sh"
 
-# this is for sending emails with python, I care nothing about this email account
+# some environment variables
 export SECRETKEY="UVQH8UtkT95Juw41HQwFmR1DA0hFhRz5"
 export ALEK_SECRET_KEY="UVQH8UtkT95Juw41HQwFmR1DA0hFhRz5"
-export EMAILUNM="digitalbhsyearbook2020@gmail.com"
-export EMAILPWD="autoemail4fun"
+export EMAILUNM="username@gmail.com"
+export EMAILPWD="password"
 export ENCRYPTIONSECRETKEY="uULfVrGAFO7uFQjw8iJebrbpU8Ql1r6FB3awVw1ZIGM="
+export PROJ_PROJ_PATH="$HOME/Desktop/project-project"
 
 # bash scripts
 rmd() {
   pandoc $1 | lynx -stdin
+}
+
+epic() {
+  date >> $HOME/Desktop/journal/epic.md
+  echo "$@" >> $HOME/Desktop/journal/epic.md
 }
 
 mkcdir() {
@@ -110,7 +115,7 @@ homework() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "/Users/alekwestover/Desktop/documentation/latexDocs/homework.tex" "./$1.tex"
+		cp "$HOME/Desktop/notes/latexDocs/homework.tex" "./$1.tex"
 	fi
 }
 
@@ -121,7 +126,7 @@ writeup() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "/Users/alekwestover/Desktop/documentation/latexDocs/writeup.tex" "./$1.tex"
+		cp "$HOME/Desktop/notes/latexDocs/writeup.tex" "./$1.tex"
 	fi
 }
 
@@ -132,7 +137,7 @@ notes() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "/Users/alekwestover/Desktop/documentation/latexDocs/notes.tex" "./$1.tex"
+		cp "$HOME/Desktop/notes/latexDocs/notes.tex" "./$1.tex"
 	fi
 }
 
