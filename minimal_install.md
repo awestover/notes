@@ -39,6 +39,11 @@
     * `git config --global user.email "you@example.com"`
     * `git config --global user.name "Your Name"`
     * `git config credential.helper store` stores credentials
+    * **UPDATE** actually do this with ssh keys
+      * ssh-keygen -t rsa -C "your_email@example.com"
+      * xclip -sel clip < ~/.ssh/id_rsa.pub
+      * add the ssh key to your github account
+      * git remote set-url origin git@github.com:username/your-repository.git
   * `sudo apt install nodejs`
   * `sudo apt install npm`
 
