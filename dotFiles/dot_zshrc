@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+cd ~/Desktop
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="af-magic"
@@ -22,7 +23,6 @@ ZSH_THEME="fishy"
 plugins=(
 	wd
   git
-  zsh-syntax-highlighting
 )
 
 # aliases
@@ -36,9 +36,6 @@ alias music="cd /Users/alekwestover/Desktop/life/songs && python3 mpgPlayer.py"
 alias mus="cd /Users/alekwestover/Desktop/life/songs && mplayer -shuffle newStuff/*"
 alias relax="cd /Users/alekwestover/Desktop/life/songs && mplayer -shuffle relax/*"
 alias vi="nvim"
-alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
-alias rooster='sh ~/Desktop/miscProgramming/functions/alarmClock.sh'
-alias board='python3 /Users/alekwestover/Desktop/miscProgramming/functions/mathBoardOpen.py'
 alias goo='open -na "Google Chrome" --args --new-window "https://google.com"'
 alias class='open -na "Google Chrome" --args --new-window "https://classroom.google.com/u/1/h"'
 alias mail0='open -na "Google Chrome" --args --new-window "https://mail.google.com/mail/u/0"'
@@ -65,7 +62,6 @@ alias backup='sh /Users/alekwestover/Desktop/miscProgramming/functions/rsync_all
 alias musicWordless='mpg123 -Z ~/Desktop/life/songs/shortsweet/*'
 alias sl='ls'
 alias gl="git -c color.ui=auto log --graph --pretty=tformat:'%C(yellow)%h%Creset}%Cgreen(%ar)%Creset}%C(bold blue)<%an>%Creset} %s' -100|  column -s '}' -t | less"
-alias gca="git commit --ammend"
 alias cppLineCount="( find . -name '*.cpp' -print0 | xargs -0 cat ) | wc -l"
 alias hppLineCount="( find . -name '*.hpp' -print0 | xargs -0 cat ) | wc -l"
 alias cleanDS="sudo find . -name '.DS_Store' -type f -delete"
@@ -87,6 +83,16 @@ export ENCRYPTIONSECRETKEY="uULfVrGAFO7uFQjw8iJebrbpU8Ql1r6FB3awVw1ZIGM="
 export PROJ_PROJ_PATH="$HOME/Desktop/project-project"
 
 # bash scripts
+
+gitsetremote(){
+	if [ -z "$1" ]
+	then 
+		echo "you forgot the name of the repo."
+	else
+    git remote set-url origin git@github.com:awestover/$1.git
+  fi
+}
+
 rmd() {
   pandoc $1 | lynx -stdin
 }
@@ -115,7 +121,7 @@ homework() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$HOME/Desktop/notes/latexDocs/homework.tex" "./$1.tex"
+		cp "$HOME/Desktop/forfun/notes/latexDocs/homework.tex" "./$1.tex"
 	fi
 }
 
@@ -126,7 +132,7 @@ writeup() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$HOME/Desktop/notes/latexDocs/writeup.tex" "./$1.tex"
+		cp "$HOME/Desktop/forfun/notes/latexDocs/writeup.tex" "./$1.tex"
 	fi
 }
 
@@ -137,10 +143,12 @@ notes() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$HOME/Desktop/notes/latexDocs/notes.tex" "./$1.tex"
+		cp "$HOME/Desktop/forfun/notes/latexDocs/notes.tex" "./$1.tex"
 	fi
 }
 
 
 source $ZSH/oh-my-zsh.sh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

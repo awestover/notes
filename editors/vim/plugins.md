@@ -5,10 +5,13 @@
   viw to go into visual mode inside a word
   then S" to surround selection with quotes
 
+  cs") is also useful: change surrounding
+
 
 # vim-substitution
   by kevin ;)
   note: PlugInstall basically just does git clone
+  ,s to find replace
 
 # vim-move
  alt then hjkl

@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{csquotes}
+\usepackage{enumitem}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -21,6 +22,8 @@
 \newcommand{\todo}[1]{{\color{red}\textbf{TODO:} #1}}
 
 
+\usepackage{bbm}
+\DeclareMathOperator{\one}{\mathbbm{1}}
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
 
@@ -53,7 +56,7 @@
 \newcommand{\eqdef}{=\vcentcolon}
 
 \usepackage{algorithm}
-\usepackage{algpseudocode} % adding [noend] deletes the end while and stuff
+\usepackage[noend]{algpseudocode} % adding [noend] deletes the end while and stuff
 
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}

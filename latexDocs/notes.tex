@@ -8,6 +8,7 @@
 \usepackage{mathtools}
 \usepackage{csquotes} 
 \usepackage{listings}
+\usepackage{enumitem}
 
 \usepackage[breakable]{tcolorbox}
 
@@ -22,6 +23,8 @@
 \renewcommand{\paragraph}[1]{\vspace{0.09in}\noindent{\bf \boldmath #1.}} 
 \newcommand{\todo}[1]{{\color{red}\textbf{TODO:} #1}}
 
+\usepackage{bbm}
+\DeclareMathOperator{\one}{\mathbbm{1}}
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
 \DeclareMathOperator{\img}{Img}
@@ -57,7 +60,7 @@
 \crefname{enumi}{Step}{} % cref{eq:blah} only does (1) instead of Equation (1)
 
 \usepackage{algorithm}
-\usepackage{algpseudocode} % adding [noend] deletes the end while and stuff
+\usepackage[noend]{algpseudocode} % adding [noend] deletes the end while and stuff
 
 \newtheorem{fact}{Fact}
 \newtheorem{definition}{Definition}
@@ -103,6 +106,7 @@
 {\begin{tcolorbox}[colback=green!15!white,colframe=green!35!black]\begin{protoproposition}}
 {\end{protoproposition}\end{tcolorbox}}
 
+\theoremstyle{definition}
 \newtheorem{protoexample}{Example}[section]
 \newenvironment{ex}
 {\begin{tcolorbox}[colback=red!15!white,colframe=red!35!black]\begin{protoexample}}

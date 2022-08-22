@@ -58,6 +58,8 @@ inoremap jf <esc>
 vnoremap jf <esc>
 nnoremap xx yydd
 
+vmap <C-B> gq
+
 nnoremap <leader>l :!pdflatex % > "/dev/null"<CR>
 nnoremap <leader>p :call TexSpell()<CR>
 
@@ -121,12 +123,12 @@ au BufEnter *.py noremap <Leader>r <Esc>:w<CR>:!python3 %<CR>
 " set termguicolors
 " let base16colorspace=256
 " colorscheme evening
-colorscheme elflord
+" colorscheme elflord
 " colorscheme afterglow
 
 set background=dark
 " set background=light
-" colorscheme PaperColor
+colorscheme PaperColor
 " colorscheme late_evening
 " colorscheme simpleblack
 

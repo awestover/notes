@@ -1,11 +1,13 @@
 
 
+
 # links
 
-- [pandoc.md](pandoc.md)
-- [notes.tex](notes.tex)
-- [notes.pdf](notes.pdf)
-- [writeup.tex](writeup.tex)
-- [README.md](README.md)
-- [homework.tex](homework.tex)
+- [docs](docs)
 - [latexmkDocs.md](latexmkDocs.md)
+- [notes.tex](notes.tex)
+- [pandoc.md](pandoc.md)
+- [homework.tex](homework.tex)
+- [notes.pdf](notes.pdf)
+- [README.md](README.md)
+- [writeup.tex](writeup.tex)

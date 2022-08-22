@@ -9,6 +9,7 @@
 \usepackage{xspace}
 \usepackage{xcolor}
 \usepackage{csquotes} 
+\usepackage{enumitem}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -23,6 +24,8 @@
 \renewcommand{\paragraph}[1]{\vspace{0.09in}\noindent{\bf \boldmath #1.}} 
 \newcommand{\todo}[1]{{\color{red}\textbf{TODO:} #1}}
 
+\usepackage{bbm}
+\DeclareMathOperator{\one}{\mathbbm{1}}
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
 \DeclareMathOperator{\img}{Img}
@@ -35,7 +38,7 @@
 \newcommand{\paren}[1]{\left( #1 \right)}
 
 \usepackage{algorithm}
-\usepackage{algpseudocode} % adding [noend] deletes the end while and stuff
+\usepackage[noend]{algpseudocode} % adding [noend] deletes the end while and stuff
 
 \usepackage[capitalise,nameinlink,noabbrev]{cleveref}
 \crefname{equation}{}{} % cref{eq:blah} only does (1) instead of Equation (1)
