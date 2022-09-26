@@ -1,5 +1,5 @@
 \documentclass{article}[11pt]
-\usepackage[subtle]{savetrees}
+% \usepackage[subtle]{savetrees}
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
 
 \usepackage{amsthm}
@@ -74,7 +74,8 @@
 \usepackage{xcolor}
 \usepackage{amsthm}
 \usepackage{framed}
-\theoremstyle{plain}% default
+% \theoremstyle{plain}% default
+\theoremstyle{definition}
 
 \newtheorem{prototheorem}{Theorem}[section]
 \newenvironment{thm}
@@ -116,6 +117,8 @@
 \newenvironment{rmk}
 {\begin{tcolorbox}[colback=green!15!white,colframe=green!35!black]\begin{protoremark}}
 {\end{protoremark}\end{tcolorbox}}
+
+\newcommand\m[1]{\begin{pmatrix}#1\end{pmatrix}} 
 
 \author{Alek Westover}
 \title{Notes}
