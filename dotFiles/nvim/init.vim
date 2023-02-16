@@ -1,5 +1,6 @@
 set linebreak
 
+
 " --- stuff for writing text documents --- "
 set nojoinspaces " makes gq and J work better for combining sentences. (less double spaces).
 
@@ -10,20 +11,19 @@ au BufRead,BufNewFile *.txt		  setfiletype text
 au BufRead,BufNewFile *.augmd		setfiletype augmd
 au Syntax augmd runtime! syntax/augmd.vim
 
-augroup configgroup
-  autocmd Filetype julia setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4
-  autocmd Filetype python setlocal tabstop=2 softtabstop=0 expandtab shiftwidth=2
-  autocmd Filetype c setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4
-  autocmd Filetype cpp setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4
-  autocmd Filetype markdown setlocal tw=65 fo+=t
-  autocmd Filetype text setlocal tw=65 fo+=t
-  autocmd Filetype tex setlocal tw=65
-augroup END
-
 set cindent
 set cinkeys-=0X^H#
 set indentkeys-=0X^H#
 
+augroup configgroup
+  autocmd Filetype julia setlocal tabstop=2 softtabstop=0 expandtab shiftwidth=2
+  autocmd Filetype py setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4
+  autocmd Filetype c setlocal tabstop=2 softtabstop=0 expandtab shiftwidth=2
+  autocmd Filetype cpp setlocal tabstop=2 softtabstop=0 expandtab shiftwidth=2
+  autocmd Filetype markdown setlocal tw=65 fo+=t nocindent
+  autocmd Filetype text setlocal tw=65 fo+=t nocindent
+  autocmd Filetype tex setlocal tw=65
+augroup END
 
 " ---------------Style------------"
 filetype plugin indent on
@@ -36,15 +36,22 @@ fun! TexSpell()
 	syntax spell toplevel
 endfun
 
+" stuff from some random PHD student's blog
 let g:tex_flavor = 'tex'
+let g:tex_conceal='abdmg'
 
+" setlocal spell
+set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+au BufEnter *.tex inoremap <C-f> <Esc>: silent exec '.!python3 ~/Desktop/forfun/notes/latexDocs/ink.py tex'<CR><CR>:w<CR>
+au BufEnter *.md inoremap <C-f> <Esc>: silent exec '.!python3 ~/Desktop/forfun/notes/latexDocs/ink.py md'<CR><CR>:w<CR>
+nnoremap <C-f> : exec '!python3 ~/Desktop/forfun/notes/latexDocs/ink_open.py' '"' getline(".") '"'<CR><CR>:w<CR>
 
 "------------Mappings--------------"
 let mapleader = ','		"The default leader is '\', but ',' is better.
 
-
 noremap <leader>q :q<cr>
-
 
 imap <C-_> <C-o><leader>c<Space>
 nmap <C-_> <leader>c<Space>
@@ -60,18 +67,16 @@ nnoremap xx yydd
 
 vmap <C-B> gq
 
-nnoremap <leader>l :!pdflatex % > "/dev/null"<CR>
+au BufEnter *.tex nnoremap <leader>l :!pdflatex --shell-escape % > "/dev/null"<CR>
+au BufEnter *.md nnoremap <leader>l :!python3 ~/Desktop/forfun/notes/latexDocs/svg_to_png.py<CR>
 nnoremap <leader>p :call TexSpell()<CR>
 
 nmap <CR> o<ESC>
 nmap <space><space> :w<CR>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-
 inoremap cz <Esc>uI
 "Go to normal mode, undo, and go back to insert
-"
-" int x = arr[]
 
 nnoremap d "_d
 vnoremap d "_d
@@ -122,12 +127,14 @@ au BufEnter *.py noremap <Leader>r <Esc>:w<CR>:!python3 %<CR>
 "-------------Color schemes--------------"
 " set termguicolors
 " let base16colorspace=256
+"
+" set background=dark
+set background=light
+
 " colorscheme evening
 " colorscheme elflord
 " colorscheme afterglow
 
-set background=dark
-" set background=light
 colorscheme PaperColor
 " colorscheme late_evening
 " colorscheme simpleblack
@@ -190,7 +197,6 @@ nmap w<leader> :bp <BAR> bd #<CR>
 
 " Be able to switch buffers without saving
 set hidden
-
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.

@@ -2,10 +2,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 cd ~/Desktop
 
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/lib/julia-1.8.1/bin
+
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="af-magic"
-ZSH_THEME="fishy"
-# ZSH_THEME="clean"
+# ZSH_THEME="fishy"
+ZSH_THEME="clean"
 # ZSH_THEME="candy"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -23,64 +26,55 @@ ZSH_THEME="fishy"
 plugins=(
 	wd
   git
+  z
 )
 
 # aliases
-alias save='python3 /Users/alekwestover/Desktop/miscProgramming/functions/saver.py '
-alias todo='cd /Users/alekwestover/Desktop/nonGameProjects/lbdsbwjbd && python3 app.py'
-alias gosave='python3 /Users/alekwestover/Desktop/miscProgramming/functions/gosaved.py '
+alias sz="source ~/.zshrc"
+alias pytest="python3 -m pytest test.py"
+alias pylint="python3 -m pylint lab.py" 
+alias black="python3 -m black lab.py"
+alias oa="evince *.pdf"
 alias pypy="/usr/local/bin/pypy/bin/./pypy "
 alias pypypip="/usr/local/bin/pypy/bin/./pip "
 alias gcco="gcc -std=c++11 -O3 -march=native -funroll-loops "
-alias music="cd /Users/alekwestover/Desktop/life/songs && python3 mpgPlayer.py"
-alias mus="cd /Users/alekwestover/Desktop/life/songs && mplayer -shuffle newStuff/*"
-alias relax="cd /Users/alekwestover/Desktop/life/songs && mplayer -shuffle relax/*"
 alias vi="nvim"
-alias goo='open -na "Google Chrome" --args --new-window "https://google.com"'
-alias class='open -na "Google Chrome" --args --new-window "https://classroom.google.com/u/1/h"'
-alias mail0='open -na "Google Chrome" --args --new-window "https://mail.google.com/mail/u/0"'
-alias drive0='open -na "Google Chrome" --args --new-window "https://drive.google.com/drive/u/0/my-drive"'
-alias school='open ~/Documents/schedule.png'
 alias mouse='python3 /Users/alekwestover/Desktop/miscProgramming/functions/mouseMover.py'
-alias quotes='python3 /Users/alekwestover/Desktop/life/fantasyBooks/spawnQuotes.py'
-alias ask='python3 /Users/alekwestover/Desktop/miscProgramming/functions/googler.py '
-alias todoapp='sh /Users/alekwestover/Desktop/nonGameProjects/todoApp/runTodoApp.sh'
 alias l='ls'
 alias ltex='find *.tex'
+alias lt='ls *.tex'
 alias lh='echo "running python server at localhost:8000"; python3 -m http.server'
 alias gitc='git add .;  git commit -m'
 alias gitu='git pull origin master'
 alias gitp='git push origin master'
 alias gitph='git push heroku master'
-alias corona='pandoc --css ../daystyle.css -s --mathjax readme.md -o index.html'
 alias journal='pandoc --css style.css -s --mathjax -H custom_header.html readme.md -o index.html'
-alias macKeyboard='echo "Mac Keyboard:
-control : up carrot ^
-option: weird squiggle
-shift: big up arrow"'
 alias backup='sh /Users/alekwestover/Desktop/miscProgramming/functions/rsync_all.sh'
-alias musicWordless='mpg123 -Z ~/Desktop/life/songs/shortsweet/*'
 alias sl='ls'
 alias gl="git -c color.ui=auto log --graph --pretty=tformat:'%C(yellow)%h%Creset}%Cgreen(%ar)%Creset}%C(bold blue)<%an>%Creset} %s' -100|  column -s '}' -t | less"
 alias cppLineCount="( find . -name '*.cpp' -print0 | xargs -0 cat ) | wc -l"
 alias hppLineCount="( find . -name '*.hpp' -print0 | xargs -0 cat ) | wc -l"
 alias cleanDS="sudo find . -name '.DS_Store' -type f -delete"
-alias skim="/Applications/Skim.app/Contents/MacOS/Skim"
 alias ctstex="latexmk -pvc -view='pdf' "
-alias nasm="/usr/local/bin/nasm"
-alias sourceTmux="tmux source-file ~/.tmux.conf"
-alias nsrr="/usr/local/lib/ruby/gems/2.6.0/gems/nsrr-5.0.0/bin/nsrr"
-alias scheduledinger="python3 /Users/alekwestover/Desktop/documentation/pythonDocs/misc/schedule.py"
-alias repeatedly="python3 /Users/alekwestover/Desktop/miscProgramming/functions/repeatedly.py "
-alias blog="sh ../formatting/buildmd.sh"
 
-# some environment variables
-export SECRETKEY="UVQH8UtkT95Juw41HQwFmR1DA0hFhRz5"
-export ALEK_SECRET_KEY="UVQH8UtkT95Juw41HQwFmR1DA0hFhRz5"
-export EMAILUNM="username@gmail.com"
-export EMAILPWD="password"
-export ENCRYPTIONSECRETKEY="uULfVrGAFO7uFQjw8iJebrbpU8Ql1r6FB3awVw1ZIGM="
-export PROJ_PROJ_PATH="$HOME/Desktop/project-project"
+alias cvenv="python3 -m virtualenv venv"
+alias vact="source venv/bin/activate" # activate a virtual env
+
+alias dumbjavac="/usr/lib/jvm/java-8-openjdk-amd64/bin/javac"
+alias dumbjava="/usr/lib/jvm/java-8-openjdk-amd64/bin/java"
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+
+alias lu='sudo brightnessctl -d "intel_backlight" set +5%'
+alias ld='sudo brightnessctl -d "intel_backlight" set 5%-'
+
+export SKYSPACE="/home/alek/Desktop/art/skyspace"
+alias bsky="python3 $SKYSPACE/compile.py; python3 $SKYSPACE/compile-feeds.py"
+# alias feeds="python3 $SKYSPACE/compile-feeds.py"
+alias newcatsky="python3 $SKYSPACE/create_category.py"
+
+alias acc="python3 /home/alek/Desktop/health/account.py"
+
+export OPENAI_API_KEY="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"
 
 # bash scripts
 
@@ -117,10 +111,11 @@ pandapdf() {
 homework() {
 	if [ -z "$1" ]
 	then 
-		echo "put a project name plz"
+		echo "what should I name the homework?"
 	else
 		mkdir "./$1"
 		cd "./$1"
+		cp "$HOME/Desktop/forfun/notes/latexDocs/homework_head.tex" "."
 		cp "$HOME/Desktop/forfun/notes/latexDocs/homework.tex" "./$1.tex"
 	fi
 }
@@ -148,7 +143,42 @@ notes() {
 }
 
 
+vit() {
+  latexmk -pdf -pvc $1 &>/dev/null &
+  vi $1
+}
+kv(){
+  kill $(ps aux | grep 'latexmk' | awk '{print $2}')
+  latexmk -C
+}
+
+sky(){
+  python3 $SKYSPACE/newfeed.py
+  echo "sleeping..."
+  sleep 0.5
+  cd $(cat $SKYSPACE/most_recent_feed_dir.txt)
+  vi $(cat $SKYSPACE/most_recent_feed.txt)
+}
+
+op(){
+  for file in ./*.pdf; do open "${file}"; done
+}
+
+opng(){
+  for file in ./*.png; do open "${file}"; done
+}
+
+myip() {
+  ifconfig wlp0s20f3 | awk '$1 == "inet" {print $2}'
+}
+
+py() {
+  if [ -z "$1" ]
+  then 
+    python3
+  else
+    python3 "$1"
+  fi
+}
+
 source $ZSH/oh-my-zsh.sh
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

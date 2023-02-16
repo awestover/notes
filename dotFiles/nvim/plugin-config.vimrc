@@ -12,7 +12,10 @@ let g:substitution_confirmation = 1
 "/ markdown
 
 let g:markdown_enable_spell_checking = 0
+let g:vim_markdown_math = 1
 let g:markdown_enable_conceal = 1
+let g:vim_markdown_folding_disabled = 1
+set conceallevel=2
 
 "/
 "/ Julia-Vim
@@ -63,7 +66,7 @@ let NERDTreeIgnore=['node_modules$[[dir]]', '__pycache__$[[dir]]', '.git$[[dir]]
 set noshowmode								"Remove ---insert--- below status bar
 
 let g:lightline = {
-	  \ 'colorscheme': 'Dracula',
+	  \ 'colorscheme': 'Tomorrow',
 	  \ 'active': {
 	  \   'left': [ [ 'mode', 'paste' ],
 	  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
