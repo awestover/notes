@@ -74,8 +74,6 @@ alias newcatsky="python3 $SKYSPACE/create_category.py"
 
 alias acc="python3 /home/alek/Desktop/health/account.py"
 
-export OPENAI_API_KEY="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"
-
 # bash scripts
 
 gitsetremote(){
