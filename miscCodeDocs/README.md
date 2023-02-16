@@ -1,9 +1,10 @@
 
 
 
+
 # links
 
-- [greekVars.py](greekVars.py)
-- [githubstuff.txt](githubstuff.txt)
-- [README.md](README.md)
 - [basicGitDocs.md](basicGitDocs.md)
+- [greekVars.py](greekVars.py)
+- [README.md](README.md)
+- [githubstuff.txt](githubstuff.txt)

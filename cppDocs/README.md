@@ -1,12 +1,13 @@
 
 
 
+
 # links
 
-- [priorityQueue.cpp](priorityQueue.cpp)
 - [system.cpp](system.cpp)
-- [privateVsProtected.cpp](privateVsProtected.cpp)
 - [threadTest](threadTest)
 - [README.md](README.md)
+- [privateVsProtected.cpp](privateVsProtected.cpp)
 - [friends.cpp](friends.cpp)
+- [priorityQueue.cpp](priorityQueue.cpp)
 - [inheritence.cpp](inheritence.cpp)
