@@ -25,6 +25,9 @@ augroup configgroup
   autocmd Filetype tex setlocal tw=65
 augroup END
 
+" this is to get python to indent with 2 spaces
+let g:python_recommended_style = 1
+
 " ---------------Style------------"
 filetype plugin indent on
 
@@ -46,7 +49,7 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 au BufEnter *.tex inoremap <C-f> <Esc>: silent exec '.!python3 ~/Desktop/forfun/notes/latexDocs/ink.py tex'<CR><CR>:w<CR>
 au BufEnter *.md inoremap <C-f> <Esc>: silent exec '.!python3 ~/Desktop/forfun/notes/latexDocs/ink.py md'<CR><CR>:w<CR>
-nnoremap <C-f> : exec '!python3 ~/Desktop/forfun/notes/latexDocs/ink_open.py' '"' getline(".") '"'<CR><CR>:w<CR>
+nnoremap <C-f> :exec '!python3 ~/Desktop/forfun/notes/latexDocs/ink_open.py' '"' getline(".") '"'<CR><CR>:w<CR>
 
 "------------Mappings--------------"
 let mapleader = ','		"The default leader is '\', but ',' is better.
