@@ -1,6 +1,5 @@
 # this goes in plugged/markdown/syntax/markdown.vim or something
 
-
 +" latex syntax highlighting
 +syntax region Statement oneline matchgroup=Delimiter start="\$" end="\$"
 +syntax region Statement matchgroup=Delimiter start="\\begin{.*}" end="\\end{.*}" contains=Statement

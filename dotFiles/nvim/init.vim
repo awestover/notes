@@ -71,6 +71,7 @@ nnoremap xx yydd
 vmap <C-B> gq
 
 au BufEnter *.tex nnoremap <leader>l :!pdflatex --shell-escape % > "/dev/null"<CR>
+au BufEnter *.tex nnoremap <C-g> :!evince *.pdf &<CR>
 au BufEnter *.md nnoremap <leader>l :!python3 ~/Desktop/forfun/notes/latexDocs/svg_to_png.py<CR>
 nnoremap <leader>p :call TexSpell()<CR>
 
