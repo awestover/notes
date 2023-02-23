@@ -61,6 +61,11 @@
     * pdf viewer: `evince` installed by default, seems good
 
 - misc
-  * install simplenote, openboard
-  * set a run on startup script to open to-do list and simplenote
+  * install inkscape
+```
+sudo add-apt-repository ppa:inkscape.dev/stable
+sudo apt update
+sudo apt install inkscape
+```
+  * `sudo apt install gnome-tweaks`
 
