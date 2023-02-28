@@ -1,7 +1,7 @@
 import os
 import sys
 
-BASE = "~/Desktop/forfun/notes/latexDocs/base.svg"
+BASE = os.path.join(os.environ.get("BASE"), "forfun/notes/latexDocs/base.svg")
 
 def buff(x):
   x = str(x)
