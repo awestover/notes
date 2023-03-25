@@ -31,6 +31,7 @@ plugins=(
 )
 
 # aliases
+alias killsnap="snap-store --quit ; sudo snap refresh "
 alias sz="source ~/.zshrc"
 alias pytest="python3 -m pytest test.py"
 alias pylint="python3 -m pylint lab.py" 
@@ -40,7 +41,7 @@ alias pypy="/usr/local/bin/pypy/bin/./pypy "
 alias pypypip="/usr/local/bin/pypy/bin/./pip "
 alias gcco="gcc -std=c++11 -O3 -march=native -funroll-loops "
 alias vi="nvim"
-alias mouse='python3 /Users/alekwestover/Desktop/miscProgramming/functions/mouseMover.py'
+alias mouse='python3 $BASE/forfun/miscProgramming/functions/mouseMover.py'
 alias l='ls'
 alias ltex='find *.tex'
 alias lt='ls *.tex'
@@ -50,7 +51,7 @@ alias gitu='git pull origin master'
 alias gitp='git push origin master'
 alias gitph='git push heroku master'
 alias journal='pandoc --css style.css -s --mathjax -H custom_header.html readme.md -o index.html'
-alias backup='sh /Users/alekwestover/Desktop/miscProgramming/functions/rsync_all.sh'
+alias backup='sh $BASE/forfun/miscProgramming/functions/rsync_all.sh'
 alias sl='ls'
 alias gl="git -c color.ui=auto log --graph --pretty=tformat:'%C(yellow)%h%Creset}%Cgreen(%ar)%Creset}%C(bold blue)<%an>%Creset} %s' -100|  column -s '}' -t | less"
 alias cppLineCount="( find . -name '*.cpp' -print0 | xargs -0 cat ) | wc -l"
@@ -68,12 +69,14 @@ export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
 alias lu='sudo brightnessctl -d "intel_backlight" set +5%'
 alias ld='sudo brightnessctl -d "intel_backlight" set 5%-'
 
-export SKYSPACE="/home/alek/Desktop/art/skyspace"
-alias bsky="python3 $SKYSPACE/compile.py; python3 $SKYSPACE/compile-feeds.py"
+export SKYSPACE="/home/alek/Dropbox (MIT)/skyspace"
+export BASE="/home/alek/dropbox"
+alias bsky='python3 $SKYSPACE/compile.py; python3 $SKYSPACE/compile-feeds.py; cd $SKYSPACE; git add .; git commit -m "new post"; git push'
+alias csky='python3 $SKYSPACE/compile.py; python3 $SKYSPACE/compile-feeds.py'
 # alias feeds="python3 $SKYSPACE/compile-feeds.py"
 alias newcatsky="python3 $SKYSPACE/create_category.py"
 
-alias acc="python3 /home/alek/Desktop/health/account.py"
+alias acc="python3 $BASE/health/account.py"
 
 # bash scripts
 
@@ -90,11 +93,6 @@ rmd() {
   pandoc $1 | lynx -stdin
 }
 
-epic() {
-  date >> $HOME/Desktop/journal/epic.md
-  echo "$@" >> $HOME/Desktop/journal/epic.md
-}
-
 mkcdir() {
 	mkdir $1
 	cd $1
@@ -107,15 +105,15 @@ pandapdf() {
 	pandoc $filename.md -s -o $filename.pdf
 }
 
-homework() {
+hw() {
 	if [ -z "$1" ]
 	then 
 		echo "what should I name the homework?"
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$HOME/Desktop/forfun/notes/latexDocs/homework_head.tex" "."
-		cp "$HOME/Desktop/forfun/notes/latexDocs/homework.tex" "./$1.tex"
+		cp "$BASE/forfun/notes/latexDocs/homework_head.tex" "."
+		cp "$BASE/forfun/notes/latexDocs/homework.tex" "./$1.tex"
 	fi
 }
 
@@ -126,7 +124,7 @@ writeup() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$HOME/Desktop/forfun/notes/latexDocs/writeup.tex" "./$1.tex"
+		cp "$BASE/forfun/notes/latexDocs/writeup.tex" "./$1.tex"
 	fi
 }
 
@@ -137,7 +135,7 @@ notes() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$HOME/Desktop/forfun/notes/latexDocs/notes.tex" "./$1.tex"
+		cp "$BASE/forfun/notes/latexDocs/notes.tex" "./$1.tex"
 	fi
 }
 
@@ -155,8 +153,8 @@ sky(){
   python3 $SKYSPACE/newfeed.py
   echo "sleeping..."
   sleep 0.5
-  cd $(cat $SKYSPACE/most_recent_feed_dir.txt)
-  vi $(cat $SKYSPACE/most_recent_feed.txt)
+  cd "$(cat $SKYSPACE/most_recent_feed_dir.txt)"
+  vi "$(cat $SKYSPACE/most_recent_feed.txt)"
 }
 
 op(){

@@ -23,7 +23,6 @@ call plug#begin()
   Plug 'preservim/vim-markdown'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'calviken/vim-gdscript3'
 	Plug 'pangloss/vim-javascript'
   Plug 'vim-scripts/indentpython.vim'
   Plug 'vim-jp/vim-cpp'

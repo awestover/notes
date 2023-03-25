@@ -47,9 +47,9 @@ let g:tex_conceal='abdmg'
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-au BufEnter *.tex inoremap <C-f> <Esc>: silent exec '.!python3 ~/Desktop/forfun/notes/latexDocs/ink.py tex'<CR><CR>:w<CR>
-au BufEnter *.md inoremap <C-f> <Esc>: silent exec '.!python3 ~/Desktop/forfun/notes/latexDocs/ink.py md'<CR><CR>:w<CR>
-nnoremap <C-f> :exec '!python3 ~/Desktop/forfun/notes/latexDocs/ink_open.py' '"' getline(".") '"'<CR><CR>:w<CR>
+au BufEnter *.tex inoremap <C-f> <Esc>: silent exec '.!python3 $BASE/forfun/notes/latexDocs/ink.py tex'<CR><CR>:w<CR>
+au BufEnter *.md inoremap <C-f> <Esc>: silent exec '.!python3 $BASE/forfun/notes/latexDocs/ink.py md'<CR><CR>:w<CR>
+nnoremap <C-f> :exec '!python3 $BASE/forfun/notes/latexDocs/ink_open.py' '"' getline(".") '"'<CR><CR>:w<CR>
 
 "------------Mappings--------------"
 let mapleader = ','		"The default leader is '\', but ',' is better.
@@ -72,7 +72,7 @@ vmap <C-B> gq
 
 au BufEnter *.tex nnoremap <leader>l :!pdflatex --shell-escape % > "/dev/null"<CR>
 au BufEnter *.tex nnoremap <C-g> :!evince *.pdf &<CR>
-au BufEnter *.md nnoremap <leader>l :!python3 ~/Desktop/forfun/notes/latexDocs/svg_to_png.py<CR>
+au BufEnter *.md nnoremap <leader>l :!python3 ~/dropbox/forfun/notes/latexDocs/svg_to_png.py<CR>
 nnoremap <leader>p :call TexSpell()<CR>
 
 nmap <CR> o<ESC>
@@ -100,8 +100,8 @@ imap <C-a> <Esc>ggVG<CR>
 vnoremap <F9> "+yi<Esc>
 vnoremap <A-c> "+yi<Esc>
 
-set number			"Activate line numbers.
-let g:LineNumbers = 1
+set nonumber			"Activate line numbers.
+let g:LineNumbers = 0
 nmap <F8> :echom ToggleNums()<CR>
 function! ToggleNums()
 	let temp = g:LineNumbers
@@ -172,7 +172,10 @@ nmap <Leader><space> :nohlsearch<cr>
 " nmap <C-W> :tabclose<cr>
 " nmap <C-T> :tabe<cr>
 
-set showtabline=2
+" this completely hides the status bar in vim. I kind of like the clean aeshtetic  
+set laststatus=0
+
+set showtabline=1
 nmap <C-T> :echom SwapTab()<cr>
 function! SwapTab()
 	let TabStatus = &showtabline
