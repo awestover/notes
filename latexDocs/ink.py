@@ -23,7 +23,7 @@ if i >= 999:
 os.system(f"cp {BASE} images/{buff(i)}")
 
 if sys.argv[1] == "tex":
-  print("\includesvg[width=0.5\linewidth]{images/"+buff(i)+"}")
+  print("\\begin{figure}\n\centering\n\includesvg[width=0.5\linewidth]{images/"+buff(i)+"}\n\end{figure}")
 else:
   short_name = buff(i).replace(".svg", "")
   real_name = buff(i).replace(".svg", ".png")
