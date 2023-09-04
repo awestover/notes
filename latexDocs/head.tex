@@ -78,6 +78,12 @@
 
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode} % adding [noend] deletes the end while and stuff
+% this fixes hyperlinks in citations to algorithms
+\makeatletter
+\newcounter{HALG@line}
+\renewcommand{\theHALG@line}{\thealgorithm.\arabic{ALG@line}}
+\makeatother
+
 
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
