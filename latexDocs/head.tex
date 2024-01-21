@@ -10,9 +10,10 @@
 \usepackage{enumitem}
 \usepackage{svg}
 \usepackage{hyperref}
-\usepackage{xspace}
 \usepackage{xcolor}
 \usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{framed}
 
 \setlist[itemize]{leftmargin=*}
 \setlist{nosep}
@@ -32,8 +33,8 @@
     urlcolor={black!80!black}
 }
 
-\newcommand{\defn}[1]{{\textit{\textbf{\boldmath #1}}}\xspace}
-\renewcommand{\paragraph}[1]{\vspace{0.09in}\noindent{\bf \boldmath #1.}} 
+\newcommand{\defn}[1]{\emph{\textbf{{#1}}}}
+\renewcommand{\paragraph}[1]{\vspace{.5 cm} \noindent \textbf{#1} }
 \newcommand{\todo}[1]{{\color{red}\textbf{TODO:} #1}}
 \newcommand{\blue}[1]{{\color{blue} #1}}
 
@@ -61,10 +62,8 @@
 \renewcommand{\d}{\mathrm{d}} %straight d for integrals
 \renewcommand{\Re}{\mathrm{Re}}
 \renewcommand{\Im}{\mathrm{Im}}
-
-\newcommand{\setof}[2]{\left\{ #1\; : \;#2 \right\}}
+\newcommand{\setof}[2]{\left\{ #1\; \mid \;#2 \right\}}
 \newcommand{\set}[1]{\left\{ #1\right\}}
-
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
@@ -75,6 +74,12 @@
 \newcommand{\contr}{\[ \Rightarrow\!\Leftarrow \]}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\ang}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand\m[1]{\begin{pmatrix}#1\end{pmatrix}} 
 
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode} % adding [noend] deletes the end while and stuff
@@ -83,13 +88,6 @@
 \newcounter{HALG@line}
 \renewcommand{\theHALG@line}{\thealgorithm.\arabic{ALG@line}}
 \makeatother
-
-
-\newcommand{\floor}[1]{\lfloor #1 \rfloor}
-\newcommand{\ceil}[1]{\lceil #1 \rceil}
-\newcommand{\paren}[1]{\left( #1 \right)}
-\newcommand{\ang}[1]{\langle #1 \rangle}
-\newcommand{\abs}[1]{\left| #1 \right|}
 
 \usepackage[capitalise,nameinlink,noabbrev]{cleveref}
 \crefname{equation}{}{} % cref{eq:blah} only does (1) instead of Equation (1)
@@ -114,6 +112,7 @@
 \newtheorem{case}{Case}[clm]
 \newtheorem{subcase}{Subcase}[case]
 
+% restate theorem with customized text:
 \makeatletter
 \newtheorem*{rep@theorem}{\rep@title}
 \newcommand{\newreptheorem}[2]{%
@@ -123,11 +122,10 @@
  {\end{rep@theorem}}}
 \makeatother
 \newreptheorem{theorem}{Theorem}
-
-\usepackage{mdframed}
-\usepackage{framed}
-
-\newcommand\m[1]{\begin{pmatrix}#1\end{pmatrix}} 
+%% restate theorem verbatim: 
+%% \begin{restatable}{thm}{goldbach}\end{restatable} -> later: \goldbach*
+\usepackage{thmtools}
+\usepackage{thm-restate}
 
 \usepackage[
 backend=biber,
