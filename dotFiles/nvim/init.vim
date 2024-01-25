@@ -1,6 +1,5 @@
 set linebreak
 
-
 " --- stuff for writing text documents --- "
 set nojoinspaces " makes gq and J work better for combining sentences. (less double spaces).
 
@@ -8,8 +7,9 @@ set nojoinspaces " makes gq and J work better for combining sentences. (less dou
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 " Default
 
 au BufRead,BufNewFile *.txt		  setfiletype text
-au BufRead,BufNewFile *.augmd		setfiletype augmd
-au Syntax augmd runtime! syntax/augmd.vim
+" au BufRead,BufNewFile *.md		setfiletype augmd
+" au Syntax augmd runtime! syntax/augmd.vim
+
 
 set cindent
 set cinkeys-=0X^H#
@@ -25,7 +25,7 @@ augroup configgroup
   autocmd Filetype tex setlocal tw=65
 augroup END
 
-" this is to get python to indent with 2 spaces
+" this is to get python to indent with 2/4 spaces
 let g:python_recommended_style = 1
 
 " ---------------Style------------"
@@ -72,7 +72,16 @@ vmap <C-B> gq
 
 au BufEnter *.tex nnoremap <leader>l :!pdflatex --shell-escape % > "/dev/null"<CR>
 au BufEnter *.tex nnoremap <C-g> :!evince *.pdf &<CR>
-au BufEnter *.md nnoremap <leader>l :!python3 ~/dropbox/forfun/notes/latexDocs/svg_to_png.py<CR>
+" au BufEnter *.md nnoremap <leader>l :!python3 ~/dropbox/forfun/notes/latexDocs/svg_to_png.py<CR>
+
+au BufEnter *.md nnoremap <leader>l :call RunPythonScript(expand('%'))<CR>
+
+function! RunPythonScript(filename)
+    let command = '!python3 ~/dropbox/forfun/notes/latexDocs/svg_to_png.py ' . a:filename
+    execute command
+  endfunction
+
+au BufEnter *.md nnoremap <leader>] :!python3 ~/dropbox/forfun/notes/latexDocs/runpanda.py<CR>
 nnoremap <leader>p :call TexSpell()<CR>
 
 nmap <CR> o<ESC>
@@ -133,7 +142,6 @@ au BufEnter *.py noremap <Leader>r <Esc>:w<CR>:!python3 %<CR>
 " let base16colorspace=256
 "
 " set background=dark
-set background=light
 
 " colorscheme evening
 " colorscheme elflord
@@ -145,6 +153,8 @@ colorscheme PaperColor
 
 hi Normal guibg=NONE ctermbg=NONE	
 hi LineNr ctermfg=141 ctermbg=NONE
+" set background=dark
+set background=light
 
 hi clear SpellBad
 hi SpellBad ctermfg=Black ctermbg=White
@@ -179,7 +189,7 @@ set showtabline=1
 nmap <C-T> :echom SwapTab()<cr>
 function! SwapTab()
 	let TabStatus = &showtabline
-	let newTabStatus = abs(TabStatus-2)
+	let newTabStatus = (TabStatus+1)%3
 	execute "set showtabline=".newTabStatus
 endfunction
 " 0: never
@@ -208,6 +218,13 @@ set hidden
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
 autocmd! bufwritepost $HOME/.config/nvim/init.vim source %
+
+" an extra lick of style
+" au Filetype markdown syn match brobro /\v<(beg|end)/ containedin=ALL
+" au Filetype markdown syn match mathy /\v<(lem|prop|cor|thm|pf|rmk|ex|defn|quote|clm)/ containedin=ALL
+au Filetype markdown syn match mathy /\v<(TODO)/ containedin=ALL
+highlight link brobro Error
+highlight link mathy Type
 
 source $HOME/.config/nvim/vimPlug.vimrc
 source $HOME/.config/nvim/plugin-config.vimrc

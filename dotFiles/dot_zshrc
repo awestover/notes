@@ -1,10 +1,21 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-cd "Dropbox (MIT)"
+cd "dropbox"
 clear
+
+export TELEPORT_PROXY=teleport.aws.neon.tech
+
+alias res="clear && ls"
+alias celar="clear"
+alias eee="clear"
+alias killtimes="python3 ~/Desktop/notes/notime.py "
+export GIT_EDITOR=vim
+
+alias compile_drawio="python3 $HOME/dropbox/forfun/notes/latexDocs/compile_drawio.py"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/lib/julia-1.8.1/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="af-magic"
@@ -31,17 +42,16 @@ plugins=(
 )
 
 # aliases
+alias goo="brave-browser"
+alias brave="google-chrome"
 alias killsnap="snap-store --quit ; sudo snap refresh "
 alias sz="source ~/.zshrc"
-alias pytest="python3 -m pytest test.py"
-alias pylint="python3 -m pylint lab.py" 
-alias black="python3 -m black lab.py"
 alias oa="evince *.pdf"
-alias pypy="/usr/local/bin/pypy/bin/./pypy "
-alias pypypip="/usr/local/bin/pypy/bin/./pip "
+alias pypy="~/pypy/bin/pypy "
+# alias pypypip="/usr/local/bin/pypy/bin/./pip "
 alias gcco="gcc -std=c++11 -O3 -march=native -funroll-loops "
 alias vi="nvim"
-alias mouse='python3 $BASE/forfun/miscProgramming/functions/mouseMover.py'
+alias mouse='python3 $BASE/forfun/functions/mouseMover.py'
 alias l='ls'
 alias ltex='find *.tex'
 alias lt='ls *.tex'
@@ -73,10 +83,8 @@ export SKYSPACE="/home/alek/Dropbox (MIT)/skyspace"
 export BASE="/home/alek/dropbox"
 alias bsky='python3 $SKYSPACE/compile.py; python3 $SKYSPACE/compile-feeds.py; cd $SKYSPACE; git add .; git commit -m "new post"; git push'
 alias csky='python3 $SKYSPACE/compile.py; python3 $SKYSPACE/compile-feeds.py'
-# alias feeds="python3 $SKYSPACE/compile-feeds.py"
+alias textoaugmd='python3 $SKYSPACE/tex_to_augmd.py '
 alias newcatsky="python3 $SKYSPACE/create_category.py"
-
-alias acc="python3 $BASE/health/account.py"
 
 # bash scripts
 
@@ -105,6 +113,13 @@ pandapdf() {
 	pandoc $filename.md -s -o $filename.pdf
 }
 
+minipandapdf(){
+  fullname=$1
+  filename=${fullname%.md}
+  echo $filename
+	pandoc $filename.md -s -V geometry:margin=.5in -V fontsize=10pt -o $filename.pdf
+}
+
 hw() {
 	if [ -z "$1" ]
 	then 
@@ -112,7 +127,7 @@ hw() {
 	else
 		mkdir "./$1"
 		cd "./$1"
-		cp "$BASE/forfun/notes/latexDocs/homework_head.tex" "."
+		cp "$BASE/forfun/notes/latexDocs/head.tex" "."
 		cp "$BASE/forfun/notes/latexDocs/homework.tex" "./$1.tex"
 	fi
 }
@@ -120,10 +135,11 @@ hw() {
 writeup() {
 	if [ -z "$1" ]
 	then 
-		echo "put a project name plz"
+		echo "what should I name the writeup?"
 	else
 		mkdir "./$1"
 		cd "./$1"
+		cp "$BASE/forfun/notes/latexDocs/head.tex" "."
 		cp "$BASE/forfun/notes/latexDocs/writeup.tex" "./$1.tex"
 	fi
 }
@@ -153,8 +169,8 @@ sky(){
   python3 $SKYSPACE/newfeed.py
   echo "sleeping..."
   sleep 0.5
-  cd "$(cat $SKYSPACE/most_recent_feed_dir.txt)"
-  vi "$(cat $SKYSPACE/most_recent_feed.txt)"
+  cd "$(cat $SKYSPACE/.most_recent_feed_dir.txt)"
+  vi "$(cat $SKYSPACE/.most_recent_feed.txt)"
 }
 
 op(){
@@ -178,4 +194,22 @@ py() {
   fi
 }
 
+eatself() {
+  python3 /home/alek/dropbox/forfun/notes/terminalDocs/linuxDocs/eatself.py
+  cd ..
+
+}
+
+wlog() {
+  file_name="/home/alek/Desktop/PROGRESS.md"
+  current_date=$(date +"%m/%d")
+  existing_content=$(cat "$file_name" 2>/dev/null)
+  echo -e "$current_date\n$existing_content" > "$file_name"
+  vi "$file_name"
+}
+
 source $ZSH/oh-my-zsh.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

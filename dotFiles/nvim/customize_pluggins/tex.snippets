@@ -48,7 +48,7 @@ endglobal
 
 snippet mk "Math$" wA
 $${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':']:
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':', ';']:
     snip.rv = ' '
 else:
     snip.rv = ''
@@ -56,8 +56,40 @@ else:
 endsnippet
 
 snippet dm "Math$$" wA
-$$${1}$$
+\[
+${1}
+\]
 $2
+endsnippet
+
+snippet <= "leq" iA
+\le 
+endsnippet
+
+priority 100
+snippet ** "cdot" iA
+\cdot 
+endsnippet
+
+context "math()"
+snippet tt "text" iA
+\text{$1}$0
+endsnippet
+
+context "math()"
+snippet matht "texttt" iA
+\texttt{$1}$0
+endsnippet
+
+# context "math()"
+# snippet case "cases" wA
+# \begin{cases}
+#   $1
+# \end{cases}
+# endsnippet
+
+snippet >= "geq" iA
+\ge 
 endsnippet
 
 snippet qq "quote" wA
@@ -67,6 +99,41 @@ endsnippet
 context "math()"
 snippet td "superscript" iA
 ^{$1}$0
+endsnippet
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+snippet => "implies" Ai
+\implies
+endsnippet
+
+context "math()"
+priority 10
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+context "math()"
+priority 100
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet sr "^2" iA
+^2
+endsnippet
+
+context "math()"
+snippet invs "^{-1}" iA
+^{-1}
+endsnippet
+
+context "math()"
+snippet cb "^3" iA
+^3
 endsnippet
 
 context "math()"
@@ -96,24 +163,32 @@ snippet // "Fraction" iA
 endsnippet
 
 context "math()"
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+snippet root "sqrt" iA
+\sqrt{$1}$0
 endsnippet
 
-priority 1000
-snippet '^.*\)/' "() Fraction" wrA
-`!p
-stripped = match.string[:-1]
-depth = 0
-i = len(stripped) - 1
-while True:
-	if stripped[i] == ')': depth += 1
-	if stripped[i] == '(': depth -= 1
-	if depth == 0: break;
-	i -= 1
-snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
-`{$1}$0
-endsnippet
+
+# more auto fraction
+# context "math()"
+# snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+# \\frac{`!p snip.rv = match.group(1)`}{$1}$0
+# endsnippet
+
+# this does automatic fraction; I don't really like it tbh
+# priority 1000
+# snippet '^.*\)/' "() Fraction" wrA
+# `!p
+# stripped = match.string[:-1]
+# depth = 0
+# i = len(stripped) - 1
+# while True:
+#   if stripped[i] == ')': depth += 1
+#   if stripped[i] == '(': depth -= 1
+#   if depth == 0: break;
+#   i -= 1
+# snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+# `{$1}$0
+# endsnippet
 
 ###############
 # ENVIRONMENT #
@@ -131,82 +206,64 @@ snippet cnt "Center" bi
 \end{center}
 endsnippet
 
-snippet desc "Description" bi
-\begin{description}
-	\item[${1:${VISUAL}}] $0
-\end{description}
-endsnippet
-
-snippet lemma "Lemma" bi
+snippet lem "Lemma" bi
 \begin{lemma}
 	${0:${VISUAL}}
 \end{lemma}
 endsnippet
 
 snippet prop "Proposition" bi
-\begin{prop}[$1]
+\begin{proposition}
 	${0:${VISUAL}}
-\end{prop}
+\end{proposition}
 endsnippet
 
-snippet thrm "Theorem" bi
-\begin{theorem}[$1]
+snippet thm "Theorem" bi
+\begin{theorem}
 	${0:${VISUAL}}
 \end{theorem}
 endsnippet
 
-snippet post "postulate" bi
-\begin{postulate}[$1]
+snippet pf "Proof" bi
+\begin{proof}
 	${0:${VISUAL}}
-\end{postulate}
+\end{proof}
 endsnippet
 
-snippet prf "Proof" bi
-\begin{myproof}[$1]
+snippet conj "Conjecture" bi
+\begin{conjecture}
 	${0:${VISUAL}}
-\end{myproof}
+\end{conjecture}
 endsnippet
 
 snippet def "Definition" bi
-\begin{definition}[$1]
+\begin{definition}
 	${0:${VISUAL}}
 \end{definition}
 endsnippet
 
-snippet nte "Note" bi
-\begin{note}[$1]
-	${0:${VISUAL}}
-\end{note}
-endsnippet
-
-snippet prob "Problem" bi
-\begin{problem}[$1]
-	${0:${VISUAL}}
-\end{problem}
-endsnippet
-
-snippet corl "Corollary" bi
-\begin{corollary}[$1]
+snippet cor "Corollary" bi
+\begin{corollary}
 	${0:${VISUAL}}
 \end{corollary}
 endsnippet
 
 snippet example "Example" bi
-\begin{example}[$1]
+\begin{example}
 	${0:${VISUAL}}
 \end{example}
 endsnippet
 
-snippet notion "Notation" bi
-\begin{notation}[$1]
-	$0${VISUAL}
-\end{notation}
+snippet rmk "Remark" bi
+\begin{remark}
+	${0:${VISUAL}}
+\end{remark}
 endsnippet
 
-snippet conc "Conclusion" bi
-\begin{conclusion}[$1]
-	$0${VISUAL}
-\end{conclusion}
+snippet fact "Fact" bi
+\begin{fact}
+	${0:${VISUAL}}
+\end{fact}
 endsnippet
 
 snippet fig "Figure environment" bi
@@ -224,6 +281,12 @@ snippet enuml "Enumerate letters" bi
 \end{enumerate}
 endsnippet
 
+snippet enumr "Enumerate roman" bi
+\begin{enumerate}[label=(\roman*)]
+	\item ${0:${VISUAL}}
+\end{enumerate}
+endsnippet
+
 snippet enum "Enumerate" bi
 \begin{enumerate}
 	\item ${0:${VISUAL}}
@@ -236,11 +299,11 @@ snippet item "Itemize" bi
 \end{itemize}
 endsnippet
 
-snippet case "cases" bi
-\begin{cases}
-	${0:${VISUAL}}
-\end{cases}
-endsnippet
+# snippet case "cases" bi
+# \begin{cases}
+#   ${0:${VISUAL}}
+# \end{cases}
+# endsnippet
 
 snippet abs "abstract environment" b
 \begin{abstract}
@@ -304,12 +367,6 @@ endsnippet
 
 snippet inmath "Inline Math" w
 \\(${1}\\) $0
-endsnippet
-
-snippet dm "Display Math" w
-\[
-	${1:${VISUAL}}
-\]$0
 endsnippet
 
 snippet frac "Fraction" w
