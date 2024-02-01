@@ -107,15 +107,21 @@
 \newtheorem{question}[theorem]{Question}
 
 % restate theorem with customized text:
-\makeatletter
-\newtheorem*{rep@theorem}{\rep@title}
-\newcommand{\newreptheorem}[2]{%
-\newenvironment{rep#1}[1]{%
- \def\rep@title{\cref{##1}}%
- \begin{rep@theorem}}%
- {\end{rep@theorem}}}
-\makeatother
-\newreptheorem{theorem}{Theorem}
+% \makeatletter
+% \newtheorem*{rep@theorem}{\rep@title}
+% \newcommand{\newreptheorem}[2]{%
+% \newenvironment{rep#1}[1]{%
+%  \def\rep@title{\cref{##1}}%
+%  \begin{rep@theorem}}%
+%  {\end{rep@theorem}}}
+% \makeatother
+% \newreptheorem{theorem}{Theorem}
+% better way to restate theorem with customized text:
+% you do \begin{customthm}{Title, e.g., \cref{blah}}\end{customthm}
+\newtheorem{innercustomthm}{}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
 %% restate theorem verbatim: 
 %% \begin{restatable}{thm}{goldbach}\end{restatable} -> later: \goldbach*
 \usepackage{thmtools}
