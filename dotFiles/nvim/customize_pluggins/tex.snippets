@@ -56,10 +56,11 @@ else:
 endsnippet
 
 snippet dm "Math$$" wA
-\[
-${1}
-\]
-$2
+\[ 	${1}	 \] $2
+endsnippet
+
+snippet pren "parenthesis" iA
+\left( ${1} \right) ${2}
 endsnippet
 
 snippet <= "leq" iA
@@ -276,7 +277,7 @@ snippet fig "Figure environment" bi
 endsnippet
 
 snippet enuml "Enumerate letters" bi
-\begin{enumerate}[label=(\alph*)]
+\begin{enumerate}[label=(\alph*), wide, labelwidth=!, labelindent=0pt]
 	\item ${0:${VISUAL}}
 \end{enumerate}
 endsnippet
