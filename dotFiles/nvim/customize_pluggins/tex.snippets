@@ -46,19 +46,50 @@ endglobal
 ## MYSNIPS ###
 ##############
 
-snippet mk "Math$" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':', ';']:
-    snip.rv = ' '
-else:
-    snip.rv = ''
-`$2
+snippet mk "Math$" iA
+$ ${1} $`!p snip.rv = ' ' if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':', ';'] else ''`
+$2
 endsnippet
 
-snippet dm "Math$$" wA
-\[ 	${1}	 \] $2
+snippet dm "Math$$" iA
+\[ ${1} .\] 
+$2
 endsnippet
 
+snippet cref "cref" iA
+\cref{$1}$2
+endsnippet
+
+context "math()"
+snippet setrm "setminus" iA
+\setminus $1
+endsnippet
+
+context "math()"
+snippet setb "set" iA
+\set{${1}}$2
+endsnippet
+
+context "math()"
+snippet pmo "pm1" iA
+\set{1, -1}$1
+endsnippet
+
+snippet defn "defn" iA
+\defn{$1}$2
+endsnippet
+
+context "math()"
+snippet eps "epsilon" iA
+\eps$1
+endsnippet
+
+context "math()"
+snippet phi "phi" iA
+\phi$1
+endsnippet
+
+context "math()"
 snippet pren "parenthesis" iA
 \left( ${1} \right) ${2}
 endsnippet
@@ -73,7 +104,7 @@ snippet ** "cdot" iA
 endsnippet
 
 context "math()"
-snippet tt "text" iA
+snippet ttt "text" iA
 \text{$1}$0
 endsnippet
 
@@ -94,12 +125,21 @@ snippet >= "geq" iA
 endsnippet
 
 snippet qq "quote" wA
-\`\`${1}" $2
+\`\`${1}'' $2
 endsnippet
 
 context "math()"
+snippet pp "superscript" iA
+^{$1}$2
+endsnippet
+
 snippet td "superscript" iA
-^{$1}$0
+^$0
+endsnippet
+
+context "math()"
+snippet rd "to the ... power" iA
+^{($1)}$0
 endsnippet
 
 priority 100
@@ -120,6 +160,18 @@ context "math()"
 priority 100
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+priority 10
+snippet "hat" "hat" riA
+\widehat{$1}$0
+endsnippet
+
+context "math()"
+priority 100
+snippet "([a-zA-Z])hat" "hat" riA
+\widehat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
@@ -300,11 +352,12 @@ snippet item "Itemize" bi
 \end{itemize}
 endsnippet
 
-# snippet case "cases" bi
-# \begin{cases}
-#   ${0:${VISUAL}}
-# \end{cases}
-# endsnippet
+snippet case "cases" bi
+\[ f = \begin{cases}
+		${1:1} & ${2:x>0} \\
+		${3:0} & ${4:\text{else}}.
+\end{cases}\]
+endsnippet
 
 snippet abs "abstract environment" b
 \begin{abstract}
@@ -334,27 +387,33 @@ endsnippet
 # MATH #
 ########
 
-snippet cc "subset" w
-\subset 
+context "math()"
+snippet sss "subseteq" iA
+\subseteq 
 endsnippet
 
-snippet inn "in " w
+context "math()"
+snippet inn "in " iA
 \in 
 endsnippet
 
-snippet Nn "cap" w
+context "math()"
+snippet Nn "cap" iA
 \cap 
 endsnippet
 
-snippet UU "cup" w
+context "math()"
+snippet UU "cup" iA
 \cup 
 endsnippet
 
-snippet uuu "bigcup" w
+context "math()"
+snippet uuu "bigcup" iA
 \bigcup_{${1:i \in ${2: I}}} $0
 endsnippet
 
-snippet nnn "bigcap" w
+context "math()"
+snippet nnn "bigcap" iA
 \bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
 
@@ -514,7 +573,7 @@ snippet == "Equals" w
 &= $1 \\\\
 endsnippet
 
-snippet != "Not Equal" w
+snippet != "Not Equal" iA
 \neq 
 endsnippet
 

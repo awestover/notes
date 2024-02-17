@@ -3,6 +3,14 @@
 "rainbow
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
+"/ https://castel.dev/post/lecture-notes-1/
+"Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
 "substitution
 let g:substitution_fullwordmatch = 0
 let g:substitution_global = 1

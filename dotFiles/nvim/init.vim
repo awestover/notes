@@ -39,10 +39,6 @@ fun! TexSpell()
 	syntax spell toplevel
 endfun
 
-" stuff from some random PHD student's blog
-let g:tex_flavor = 'tex'
-let g:tex_conceal='abdmg'
-
 " setlocal spell
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -147,6 +143,7 @@ au BufEnter *.py noremap <Leader>r <Esc>:w<CR>:!python3 %<CR>
 " colorscheme elflord
 " colorscheme afterglow
 
+" colorscheme wal
 colorscheme PaperColor
 " colorscheme late_evening
 " colorscheme simpleblack

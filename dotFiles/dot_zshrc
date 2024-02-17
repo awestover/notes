@@ -13,6 +13,8 @@ export GIT_EDITOR=vim
 
 alias compile_drawio="python3 $HOME/dropbox/forfun/notes/latexDocs/compile_drawio.py"
 
+alias concatpdfs="python3 ~/dropbox/forfun/notes/latexDocs/concatpdfs.py"
+
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/lib/julia-1.8.1/bin
 export PATH=$PATH:$HOME/.local/bin
