@@ -10,6 +10,18 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+" Toggle conceallevel with Control+H
+function! ToggleConceallevel()
+    if &conceallevel
+        set conceallevel=0
+    else
+        set conceallevel=1
+    endif
+endfunction
+nnoremap <silent> <C-H> :call ToggleConceallevel()<CR>
+inoremap fh <Esc>$a<Space>
+inoremap hf <Esc>$a
+nnoremap fh  A<Space>   
 
 "substitution
 let g:substitution_fullwordmatch = 0

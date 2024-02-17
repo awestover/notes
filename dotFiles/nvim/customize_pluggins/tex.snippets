@@ -46,9 +46,12 @@ endglobal
 ## MYSNIPS ###
 ##############
 
+# snippet mk "Math$" iA
+# $ ${1} $`!p snip.rv = ' ' if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':', ';'] else ''`$2
+# endsnippet
+
 snippet mk "Math$" iA
-$ ${1} $`!p snip.rv = ' ' if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':', ';'] else ''`
-$2
+$${0}$
 endsnippet
 
 snippet dm "Math$$" iA
@@ -129,11 +132,12 @@ snippet qq "quote" wA
 endsnippet
 
 context "math()"
-snippet pp "superscript" iA
+snippet td "superscript" iA
 ^{$1}$2
 endsnippet
 
-snippet td "superscript" iA
+context "math()"
+snippet pp "superscript" iA
 ^$0
 endsnippet
 
@@ -549,7 +553,7 @@ snippet part "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
-snippet ooo "\infty" w
+snippet ooo "\infty" iA
 \infty
 endsnippet
 
