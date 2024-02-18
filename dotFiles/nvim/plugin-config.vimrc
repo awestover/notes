@@ -10,6 +10,9 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+" let g:vimtex_autocomplete_enabled = 0
+let g:ycm_filetype_blacklist = { 'tex': 1, 'markdown': 1 }
+
 " Toggle conceallevel with Control+H
 function! ToggleConceallevel()
     if &conceallevel
@@ -124,8 +127,11 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 "/
 "/ UltiSnips
 "/
-let g:UltiSnipsExpandTrigger = '<C-j>'
+" let g:UltiSnipsExpandTrigger = '<C-j>'
 "let g:UltiSnipsExpandTrigger = '<Enter>'
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 "/
 "/ vim-gitgutter

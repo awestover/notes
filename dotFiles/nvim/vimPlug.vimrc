@@ -1,7 +1,7 @@
 call plug#begin()
 	Plug 'ap/vim-css-color'
 	Plug 'SirVer/ultisnips'
-	Plug 'honza/vim-snippets'
+  Plug 'honza/vim-snippets'
 	Plug 'itchyny/vim-gitbranch'
   Plug 'Valloric/YouCompleteMe'
 	Plug 'airblade/vim-gitgutter'
@@ -14,7 +14,7 @@ call plug#begin()
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'tpope/vim-surround'
 	" Plug 'luochen1990/rainbow'
-	Plug 'lervag/vimtex'
+  Plug 'lervag/vimtex'
 	Plug 'JuliaEditorSupport/julia-vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'

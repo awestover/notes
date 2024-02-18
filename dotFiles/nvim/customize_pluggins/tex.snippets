@@ -46,55 +46,72 @@ endglobal
 ## MYSNIPS ###
 ##############
 
-# snippet mk "Math$" iA
-# $ ${1} $`!p snip.rv = ' ' if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', '\'', ':', ';'] else ''`$2
-# endsnippet
-
-snippet mk "Math$" iA
-$${0}$
+priority 1000
+snippet mk "Math$" wA
+$${1}$`!p
+print(t[1])
+if t[2] and t[2][0] not in [',', '.', '?', '-', '\'', ' ', ':', ';']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
 endsnippet
 
 snippet dm "Math$$" iA
-\[ ${1} .\] 
+\[ ${1} \] 
 $2
 endsnippet
 
-snippet cref "cref" iA
-\cref{$1}$2
+snippet label "label" i
+\label{${1}}`!p snip.rv = ' ' if t[2] and t[2][0] not in [',', '.', '?', '-',  '\'', ' ', ':', ';'] else ''`$2
+endsnippet
+
+snippet cref "cref" i
+\cref{${1}}`!p snip.rv = ' ' if t[2] and t[2][0] not in [',', '.', '?', '-',  '\'', ' ', ':', ';'] else ''`$2
 endsnippet
 
 context "math()"
 snippet setrm "setminus" iA
-\setminus $1
+\\setminus 
 endsnippet
 
 context "math()"
 snippet setb "set" iA
-\set{${1}}$2
+\set{${1}}
 endsnippet
 
-context "math()"
+# context "math()"
 snippet pmo "pm1" iA
-\set{1, -1}$1
+\\set\{-1,1\}
 endsnippet
 
 snippet defn "defn" iA
-\defn{$1}$2
+\\defn\{$1\}$0
 endsnippet
 
 context "math()"
-snippet eps "epsilon" iA
-\eps$1
+snippet "(?<!\\)gamma" "\gamma" riA
+\gamma
 endsnippet
 
 context "math()"
-snippet phi "phi" iA
-\phi$1
+snippet "(?<!\\)theta" "\theta" riA
+\theta
+endsnippet
+
+context "math()"
+snippet "(?<!\\)epsi" "\eps" riA
+\epsilon
+endsnippet
+
+context "math()"
+snippet "(?<!\\)phi" "\phi" riA
+\phi
 endsnippet
 
 context "math()"
 snippet pren "parenthesis" iA
-\left( ${1} \right) ${2}
+\left( ${1} \right) $0
 endsnippet
 
 snippet <= "leq" iA
@@ -128,12 +145,18 @@ snippet >= "geq" iA
 endsnippet
 
 snippet qq "quote" wA
-\`\`${1}'' $2
+\`\`${1}'' $0
 endsnippet
 
 context "math()"
 snippet td "superscript" iA
-^{$1}$2
+^\{$1\}$0
+endsnippet
+
+priority 0
+context "math()"
+snippet root "root" iA
+\\sqrt\{$1\}$0
 endsnippet
 
 context "math()"
@@ -172,11 +195,11 @@ snippet "hat" "hat" riA
 \widehat{$1}$0
 endsnippet
 
-context "math()"
-priority 100
-snippet "([a-zA-Z])hat" "hat" riA
-\widehat{`!p snip.rv=match.group(1)`}
-endsnippet
+# context "math()"
+# priority 100
+# snippet "([a-zA-Z])hat" "hat" riA
+# \widehat{`!p snip.rv=match.group(1)`}
+# endsnippet
 
 context "math()"
 snippet sr "^2" iA
@@ -219,12 +242,6 @@ snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-context "math()"
-snippet root "sqrt" iA
-\sqrt{$1}$0
-endsnippet
-
-
 # more auto fraction
 # context "math()"
 # snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
@@ -253,73 +270,73 @@ endsnippet
 
 snippet beg "begin{} / end{}" bi
 \begin{$1}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{$1}
 endsnippet
 
 snippet cnt "Center" bi
 \begin{center}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{center}
 endsnippet
 
 snippet lem "Lemma" bi
 \begin{lemma}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{lemma}
 endsnippet
 
 snippet prop "Proposition" bi
 \begin{proposition}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{proposition}
 endsnippet
 
 snippet thm "Theorem" bi
 \begin{theorem}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{theorem}
 endsnippet
 
 snippet pf "Proof" bi
 \begin{proof}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{proof}
 endsnippet
 
 snippet conj "Conjecture" bi
 \begin{conjecture}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{conjecture}
 endsnippet
 
 snippet def "Definition" bi
 \begin{definition}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{definition}
 endsnippet
 
 snippet cor "Corollary" bi
 \begin{corollary}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{corollary}
 endsnippet
 
 snippet example "Example" bi
 \begin{example}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{example}
 endsnippet
 
 snippet rmk "Remark" bi
 \begin{remark}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{remark}
 endsnippet
 
 snippet fact "Fact" bi
 \begin{fact}
-	${0:${VISUAL}}
+${0:${VISUAL}}
 \end{fact}
 endsnippet
 
@@ -334,25 +351,25 @@ endsnippet
 
 snippet enuml "Enumerate letters" bi
 \begin{enumerate}[label=(\alph*), wide, labelwidth=!, labelindent=0pt]
-	\item ${0:${VISUAL}}
+\item ${0:${VISUAL}}
 \end{enumerate}
 endsnippet
 
 snippet enumr "Enumerate roman" bi
 \begin{enumerate}[label=(\roman*)]
-	\item ${0:${VISUAL}}
+\item ${0:${VISUAL}}
 \end{enumerate}
 endsnippet
 
 snippet enum "Enumerate" bi
 \begin{enumerate}
-	\item ${0:${VISUAL}}
+\item ${0:${VISUAL}}
 \end{enumerate}
 endsnippet
 
 snippet item "Itemize" bi
 \begin{itemize}
-	\item ${0:${VISUAL}}
+\item ${0:${VISUAL}}
 \end{itemize}
 endsnippet
 
@@ -441,14 +458,6 @@ snippet compl "Complement" i
 ^{c}
 endsnippet
 
-snippet ss "Super Script" i
-^{$1}$0
-endsnippet
-
-snippet __ "subscript" Aw
-_{$1}$0
-endsnippet
-
 snippet srt "Square Root" wi
 \sqrt{${1:${VISUAL}}}$0
 endsnippet
@@ -517,7 +526,8 @@ snippet lrb "left\{ right\}" i
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
-snippet lr[ "left[ right]" i
+context "math()"
+snippet lr[ "left[ right]" iA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
@@ -553,6 +563,7 @@ snippet part "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
+context "math()"
 snippet ooo "\infty" iA
 \infty
 endsnippet
