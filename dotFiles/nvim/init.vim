@@ -22,7 +22,7 @@ augroup configgroup
   autocmd Filetype cpp setlocal tabstop=2 softtabstop=0 expandtab shiftwidth=2
   autocmd Filetype markdown setlocal tw=65 fo+=t nocindent
   autocmd Filetype text setlocal tw=65 fo+=t nocindent
-  autocmd Filetype tex setlocal tw=65
+  autocmd Filetype tex setlocal tw=80
 augroup END
 
 " this is to get python to indent with 2/4 spaces

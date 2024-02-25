@@ -58,8 +58,7 @@ else:
 endsnippet
 
 snippet dm "Math$$" iA
-\[ ${1} \] 
-$2
+\[ ${1} \] $2
 endsnippet
 
 snippet label "label" i
@@ -85,7 +84,7 @@ snippet pmo "pm1" iA
 \\set\{-1,1\}
 endsnippet
 
-snippet defn "defn" iA
+snippet "(?<!\\)defn" "defn" riA
 \\defn\{$1\}$0
 endsnippet
 
@@ -109,6 +108,12 @@ snippet "(?<!\\)phi" "\phi" riA
 \phi
 endsnippet
 
+
+context "math()"
+snippet "(?<!\\)delta" "\delta" riA
+\delta
+endsnippet
+
 context "math()"
 snippet pren "parenthesis" iA
 \left( ${1} \right) $0
@@ -116,6 +121,11 @@ endsnippet
 
 snippet <= "leq" iA
 \le 
+endsnippet
+
+context "math()"
+snippet apx "approx" iA
+\approx 
 endsnippet
 
 priority 100

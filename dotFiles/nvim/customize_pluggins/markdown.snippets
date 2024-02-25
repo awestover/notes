@@ -77,8 +77,7 @@ else:
 endsnippet
 
 snippet dm "Math$$" wA
-$$${1}$$
-$2
+$$ ${1} $$ $2
 endsnippet
 
 snippet <= "leq" iA
@@ -111,6 +110,26 @@ snippet >= "geq" iA
 \ge 
 endsnippet
 
+context "math()"
+snippet "(?<!\\)gamma" "\gamma" riA
+\gamma
+endsnippet
+
+context "math()"
+snippet "(?<!\\)theta" "\theta" riA
+\theta
+endsnippet
+
+context "math()"
+snippet "(?<!\\)epsi" "\eps" riA
+\epsilon
+endsnippet
+
+context "math()"
+snippet "(?<!\\)phi" "\phi" riA
+\phi
+endsnippet
+
 snippet qq "quote" wA
 \`\`${1}" $2
 endsnippet
@@ -130,6 +149,10 @@ context "math()"
 priority 100
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rw
+\\`!p snip.rv = match.group(1)`
 endsnippet
 
 context "math()"
@@ -333,10 +356,10 @@ ${0:${VISUAL}}
 end rmk
 endsnippet
 
-snippet fact "Fact" bi
-beg fact
+snippet cor "Cor" bi
+beg cor
 ${0:${VISUAL}}
-end fact
+end cor
 endsnippet
 
 snippet lem "Lemma" bi

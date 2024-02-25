@@ -12,6 +12,8 @@ set conceallevel=1
 let g:tex_conceal='abdmg'
 " let g:vimtex_autocomplete_enabled = 0
 let g:ycm_filetype_blacklist = { 'tex': 1, 'markdown': 1 }
+" let g:vimtex_indent_on_ampersands = 0
+let g:vimtex_indent_enabled  = 0
 
 " Toggle conceallevel with Control+H
 function! ToggleConceallevel()
