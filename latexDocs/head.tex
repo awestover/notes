@@ -56,6 +56,10 @@
 \DeclareMathOperator{\poly}{\text{poly}}
 \newcommand{\st}{\text{ such that }}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\lv}{\left|}
+\newcommand{\rv}{\right|}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
 \newcommand{\interior}[1]{ {\kern0pt#1}^{\mathrm{o}} }
 \newcommand{\mb}{\mathbf}
 \newcommand{\partition}{\vdash}
@@ -75,6 +79,7 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\Pow}{\mc{P}}
 \newcommand{\contr}{\[ \Rightarrow\!\Leftarrow \]}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
@@ -93,6 +98,7 @@
 \newcommand{\erdos}{Erd\H{o}s}
 \newcommand{\pmo}{\set{-1,1}}
 \newcommand{\zo}{\set{0,1}}
+\newcommand{\les}{\lesssim}
 
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode} % adding [noend] deletes the end while and stuff
@@ -135,7 +141,7 @@
   {\renewcommand\theinnercustomthm{#1}\innercustomthm}
   {\endinnercustomthm}
 %% restate theorem verbatim: 
-%% \begin{restatable}{thm}{goldbach}\end{restatable} -> later: \goldbach*
+%% \begin{restatable}{theorem}{goldbach}\end{restatable} -> later: \goldbach*
 \usepackage{thmtools}
 \usepackage{thm-restate}
 
